@@ -4,7 +4,7 @@ cms:
   host:
 
 docker:
-  cms_image:
+  app_image:
 
 database:
   host:

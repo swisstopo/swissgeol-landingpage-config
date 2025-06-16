@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}-cms
+  name: {{ .Release.Name }}-app
   namespace: {{ .Release.Namespace }}
   annotations:
     keel.sh/policy: force
@@ -11,15 +11,15 @@ spec:
     replicas: 1
     selector:
         matchLabels:
-          app: {{ .Release.Name }}-cms
+          app: {{ .Release.Name }}-app
     template:
         metadata:
           labels:
-              app: {{ .Release.Name }}-cms
+              app: {{ .Release.Name }}-app
         spec:
           containers:
-          - name: {{ .Release.Name }}-cms
-            image: {{ .Values.docker.cms_image }}
+          - name: {{ .Release.Name }}-app
+            image: {{ .Values.docker.app_image }}
             imagePullPolicy: Always
             ports:
             - containerPort: 3000
