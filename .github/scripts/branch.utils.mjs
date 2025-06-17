@@ -37,7 +37,9 @@ export const findSourceAndTargetBranches = async (context) => {
 
   // Find the PR that has initiated the push resulting in the current state of the branch.
   // We do this by checking if the PR's merge commit is the same as our branch head.
-  const mergedPullRequest = pullRequests.data.find((pr) => pr.merge_commit_sha === context.payload.after);
+  const mergedPullRequest = pullRequests.data.find(
+    (pr) => pr.merge_commit_sha === context.payload.after,
+  );
 
   // If we haven't found a matching pull request, we assume that this is a "naked" push,
   // without an associated source branch.

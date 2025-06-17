@@ -9,7 +9,9 @@
     "dev": "nodemon",
     "build": "NODE_ENV=production node app @apostrophecms/asset:build",
     "serve": "NODE_ENV=production node app",
-    "release": "npm install && npm run build && node app @apostrophecms/migration:migrate"
+    "release": "npm install && npm run build && node app @apostrophecms/migration:migrate",
+    "lint": "npx eslint && npx prettier --check .",
+    "lint:fix": "npx eslint --fix && npx prettier . --write"
   },
   "nodemonConfig": {
     "delay": 1000,
@@ -45,8 +47,9 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
-    "eslint": "^8.0.0",
+    "eslint": "^8.57.1",
     "eslint-config-apostrophe": "^4.0.0",
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "prettier": "^3.5.3"
   }
 }
