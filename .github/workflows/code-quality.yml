@@ -5,7 +5,7 @@ on:
     types: [opened, synchronize, reopened]
     branches:
       - "**"
-      - "!main"
+#      - "!main"
 
 env:
   NODE_VERSION: "22.x"
