@@ -90,7 +90,6 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - lint
-      - dependency-review
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -103,7 +102,5 @@ jobs:
         with:
           path: ./node_modules
           key: "${{ runner.os }}-node_modules-${{ env.NODE_VERSION }}-${{ hashFiles('package-lock.json') }}"
-      - name: Reset nx
-        run: npx nx reset
       - name: Run build
         run: npm run build
