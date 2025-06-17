@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name}}-db
+  namespace: {{ .Release.Namespace }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Release.Name}}-db
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name}}-db
+    spec:
+      volumes:
+        - name: {{ .Release.Name }}-app-volume
+          persistentVolumeClaim:
+            claimName: {{ .Release.Name }}-app-volume-claim
+      containers:
+        - name: {{ .Release.Name }}-db
+          image: {{ .Values.docker.db_image }}
+          ports:
+            - containerPort: 27017
+          env:
+            - name: MONGO_INITDB_ROOT_USERNAME
+              value: {{ .Values.database.user }}
+            - name: MONGO_INITDB_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Release.Name }}-secrets
+                  key: database_password
+          resources:
+            limits:
+              cpu: '4'
+              memory: 4Gi
+            requests:
+              cpu: '0.5'
+              memory: 2Gi
+          volumeMounts:
+            - name: {{ .Release.Name }}-app-volume
+              mountPath: /data/db

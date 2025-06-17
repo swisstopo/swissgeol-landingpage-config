@@ -57,10 +57,5 @@ spec:
                   name: {{ .Release.Name }}-secrets
                   key: database_password
 
-          resources:
-            limits:
-              cpu: '1'
-              memory: '5Gi'
-
       imagePullSecrets:
         - name: {{ .Release.Namespace }}-registry

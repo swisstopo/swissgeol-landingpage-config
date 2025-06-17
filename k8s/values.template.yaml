@@ -1,10 +1,11 @@
 env:
 
-cms:
+app:
   host:
 
 docker:
   app_image:
+  db_image:
 
 database:
   host:
