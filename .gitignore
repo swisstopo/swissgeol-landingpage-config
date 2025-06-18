@@ -17,4 +17,5 @@ node_modules
 .jshintrc
 .DS_Store
 .env
+.idea/
 
