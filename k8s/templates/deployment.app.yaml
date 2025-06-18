@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-app
+  namespace: {{ .Release.Namespace }}
+  annotations:
+    keel.sh/policy: force
+    keel.sh/match-tag: 'true'
+    keel.sh/trigger: poll
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-app
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-app
+    spec:
+      containers:
+        - name: {{ .Release.Name }}-app
+          image: {{ .Values.docker.app_image }}
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 3000
+
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 3000
+
+          env:
+            - name: APP_PORT
+              value: '3000'
+            - name: ENV
+              value: {{ .Values.env }}
+
+            # Database
+            - name: PGHOST
+              value: "{{ .Values.database.host }}"
+            - name: PGPORT
+              value: "{{ .Values.database.port }}"
+            - name: PGDATABASE
+              value: "{{ .Values.database.name }}"
+            - name: PGUSER
+              value: "{{ .Values.database.user }}"
+            - name: PG_SSL_MODE
+              value: 'require'
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Release.Name }}-secrets
+                  key: database_password
+
+      imagePullSecrets:
+        - name: {{ .Release.Namespace }}-registry

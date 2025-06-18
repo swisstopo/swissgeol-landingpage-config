@@ -1,14 +1,14 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: {{ .Release.Name }}-cms
+  name: {{ .Release.Name }}-app
   namespace: {{ .Release.Namespace }}
 spec:
   entryPoints:
     - web
   routes:
     - kind: Rule
-      match: Host(`{{ .Values.cms.host }}`)
+      match: Host(`{{ .Values.app.host }}`)
       services:
-        - name: {{ .Release.Name }}-cms
+        - name: {{ .Release.Name }}-app
           port: 3000
