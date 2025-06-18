@@ -1,21 +1,22 @@
-FROM node:22.5.1
+# === Build stage ===
+FROM node:22.5.1-slim AS build
 
-ARG APP_VERSION
-ENV APP_VERSION=${APP_VERSION}
-
-RUN apk add --no-cache git
+RUN apt-get update && apt-get install -y \
+  git python3 make g++ libvips-dev \
+  && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 COPY . .
 
-# GitHub Secret für private Pakete
-RUN --mount=type=secret,id=github_token \
-    GITHUB_TOKEN=$(cat /run/secrets/github_token) \
-    npm install --ignore-scripts
+RUN npm ci --omit=dev \
+  && npm run build
 
-# Production optimierung (wenn nötig)
-RUN npm run build --omit=dev
+# === Production stage ===
+FROM node:22.5.1-slim
+
+WORKDIR /app
+
+COPY --from=build /app /app
 
 EXPOSE 3000
-
 CMD ["npm", "start"]
