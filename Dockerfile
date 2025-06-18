@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 COPY . .
 
-RUN npm install --ignore-scripts \
+RUN npm install \
   && npm run build --omit=dev
 
 # === Production stage ===
