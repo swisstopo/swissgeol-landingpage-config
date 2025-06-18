@@ -1,63 +1,56 @@
 export default {
-  extend: '@apostrophecms/page-type',
+  extend: "@apostrophecms/page-type",
   options: {
-    label: 'Default Page'
+    label: "Default Page",
   },
   fields: {
     add: {
       main: {
-        type: 'area',
+        type: "area",
         options: {
           widgets: {
-            '@apostrophecms/rich-text': {
+            "@apostrophecms/rich-text": {
               toolbar: [
-                'styles',
-                '|',
-                'bold',
-                'italic',
-                'strike',
-                'link',
-                '|',
-                'bulletList',
-                'orderedList',
-                '|',
-                'table',
-                'image',
+                "styles",
+                "|",
+                "bold",
+                "italic",
+                "strike",
+                "link",
+                "|",
+                "bulletList",
+                "orderedList",
+                "|",
+                "table",
+                "image",
               ],
               styles: [
                 {
-                  tag: 'p',
-                  label: 'Paragraph (P)'
+                  tag: "p",
+                  label: "Paragraph (P)",
                 },
                 {
-                  tag: 'h3',
-                  label: 'Heading 3 (H3)'
+                  tag: "h3",
+                  label: "Heading 3 (H3)",
                 },
                 {
-                  tag: 'h4',
-                  label: 'Heading 4 (H4)'
-                }
+                  tag: "h4",
+                  label: "Heading 4 (H4)",
+                },
               ],
-              insert: [
-                'table',
-                'importTable',
-                'image'
-              ]
+              insert: ["table", "importTable", "image"],
             },
-            '@apostrophecms/image': {},
-            '@apostrophecms/video': {}
-          }
-        }
-      }
+            "@apostrophecms/image": {},
+            "@apostrophecms/video": {},
+          },
+        },
+      },
     },
     group: {
       basics: {
-        label: 'Basics',
-        fields: [
-          'title',
-          'main'
-        ]
-      }
-    }
-  }
+        label: "Basics",
+        fields: ["title", "main"],
+      },
+    },
+  },
 };
