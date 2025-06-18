@@ -8,8 +8,8 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 COPY . .
 
-RUN npm ci --omit=dev \
-  && npm run build
+RUN npm install --ignore-scripts \
+  && npm run build --omit=dev
 
 # === Production stage ===
 FROM node:22.5.1-slim
