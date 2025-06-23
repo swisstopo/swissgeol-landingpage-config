@@ -43,7 +43,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: {{ .Release.Name }}-secrets
-                  key: apos_mongodb_uri
+                  key: mongodb_uri
 
 
 
