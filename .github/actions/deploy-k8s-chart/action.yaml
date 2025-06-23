@@ -25,10 +25,10 @@ runs:
         method: jwt
         namespace: admin/igi/igi-cloud/swisstopo-ngm
         secrets: |
-          assets/data/${{ inputs.TARGET_ENV }}                          kubeconfig   | KUBECONFIG;
-          assets/data/${{ inputs.TARGET_ENV }}/${{ inputs.VAULT_PATH }} helm_values  | HELM_VALUES;
-          assets/data/${{ inputs.TARGET_ENV }}/${{ inputs.VAULT_PATH }} helm_secrets | HELM_SECRETS;
-          assets/data/${{ inputs.TARGET_ENV }}/${{ inputs.VAULT_PATH }} namespace    | K8S_NAMESPACE;
+          landingpage/data/${{ inputs.TARGET_ENV }}                          kubeconfig   | KUBECONFIG;
+          landingpage/data/${{ inputs.TARGET_ENV }}/${{ inputs.VAULT_PATH }} helm_values  | HELM_VALUES;
+          landingpage/data/${{ inputs.TARGET_ENV }}/${{ inputs.VAULT_PATH }} helm_secrets | HELM_SECRETS;
+          landingpage/data/${{ inputs.TARGET_ENV }}/${{ inputs.VAULT_PATH }} namespace    | K8S_NAMESPACE;
 
     - name: "Write values to file"
       shell: bash
