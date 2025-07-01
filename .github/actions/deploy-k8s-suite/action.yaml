@@ -25,7 +25,7 @@ runs:
     - name: "Configure AWS credentials from AWS account"
       uses: aws-actions/configure-aws-credentials@v4
       with:
-#        role-to-assume: ${{ inputs.AWS_ROLE }}
+        role-to-assume: ${{ inputs.AWS_ROLE }}
         aws-region: ${{ inputs.AWS_REGION }}
         role-session-name: GitHub-OIDC
         retry-max-attempts: 3
