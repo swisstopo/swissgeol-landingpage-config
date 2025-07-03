@@ -1,0 +1,33 @@
+{# in /modules/projects-widget/views/widget.html #}
+
+{% set project = data.widget._selectedProject[0] %}
+
+{% if project %}
+<div>
+    {% set image = apos.image.first(project.image) %}
+    {% if image %}
+    {% set imageUrl = apos.attachment.url(image, {size: 'one-sixth' }) %}
+    {% else %}
+    <!-- Instead of an else you could choose to skip displaying an image. -->
+    {% set imageUrl = 'https://picsum.photos/200' %}
+    {% endif %}
+    <div class="review col-md-4">
+        <div class="review__image">
+            <img src="{{ imageUrl }}" alt="{{ altText }}">
+        </div>
+    </div>
+</div>
+<div>
+    <h2>{{ project.title }}</h2>
+    <div class="description-items">
+        {% for item in project.descriptionItems %}
+        <span class="description-item">{{ item.label }}</span>
+        {% endfor %}
+    </div>
+
+
+    <div class="project-widget__cta">
+        {% area data.widget, 'button' %}
+    </div>
+</div>
+{% endif %}

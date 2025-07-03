@@ -1,0 +1,10 @@
+.description-items {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid grey;
+}
+
+.description-item {
+  border-bottom: 1px solid grey;
+  padding: 24px 12px
+}

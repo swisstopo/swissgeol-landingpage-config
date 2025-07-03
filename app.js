@@ -29,8 +29,12 @@ apostrophe({
         className: "bp-video-widget",
       },
     },
-    "button-widget": {
-    },
+    // Custom widgets
+    "button-widget": {},
+    "projects-widget": {},
+    "dropdown-widget": {},
+    // The project's custom piece type.
+    'project': {},
     // `asset` supports the project's build for client-side assets.
     asset: {},
     // use vite for asset bundling and hot module reloading

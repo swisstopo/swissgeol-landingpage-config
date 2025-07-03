@@ -47,6 +47,8 @@ export default {
                     className: "bp-button-widget",
                 },
             },
+            "projects": {},
+            "dropdown": {}
           },
         },
       },
