@@ -41,6 +41,12 @@ export default {
             },
             "@apostrophecms/image": {},
             "@apostrophecms/video": {},
+            "button": {
+                label: "Button Widget",
+                options: {
+                    className: "bp-button-widget",
+                },
+            },
           },
         },
       },

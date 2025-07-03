@@ -42,6 +42,7 @@ export default {
             },
             "@apostrophecms/image": {},
             "@apostrophecms/video": {},
+            "button": {},
           },
         },
       },
