@@ -4,6 +4,31 @@ export default {
     label: 'Dropdown Widget',
   },
   fields: {
-    add: {}
+    add: {
+      buttonLabel: {
+        type: 'string',
+        label: 'Button Label',
+        def: 'More'
+      },
+      links: {
+        type: 'array',
+        label: 'Dropdown Links',
+        titleField: 'label',
+        fields: {
+          add: {
+            label: {
+              type: 'string',
+              label: 'Link Label',
+              required: true
+            },
+            url: {
+              type: 'url',
+              label: 'Link URL',
+              required: true
+            }
+          }
+        }
+      }
+    }
   }
 };

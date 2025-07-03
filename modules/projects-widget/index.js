@@ -12,16 +12,6 @@ export default {
         max: 1,
         required: true,
       },
-      button: {
-        type: 'area',
-        label: 'Call to Action Button',
-        options: {
-          max: 1, // Erlaube maximal einen Button
-          widgets: {
-            'button': {}
-          }
-        }
-      }
     }
   }
 };

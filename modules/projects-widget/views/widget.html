@@ -1,5 +1,3 @@
-{# in /modules/projects-widget/views/widget.html #}
-
 {% set project = data.widget._selectedProject[0] %}
 
 {% if project %}
@@ -26,8 +24,23 @@
     </div>
 
 
-    <div class="project-widget__cta">
-        {% area data.widget, 'button' %}
+    <a href="{{project.mainUrl}}" class="button normal primary default">{{project.title}}</a>
+    {% if project.additionalUrls and project.additionalUrls|length == 1 %}
+    <a href="{{project.additionalUrls[0].url}}" class="button normal secondary default">{{project.descriptionItems[0].label}}</a>
+    {% elif project.additionalUrls and project.additionalUrls|length > 1 %}
+    <div class="dropdown">
+        <button class="button normal secondary default dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+            Select a link
+            <span class="arrow">&#9662;</span>
+        </button>
+        <ul class="dropdown-menu" role="menu" hidden>
+            {% for urlItem in project.additionalUrls %}
+            <li><a href="{{ urlItem.url }}">{{ urlItem.label or 'Link ' ~ loop.index }}</a></li>
+            {% endfor %}
+        </ul>
     </div>
+
+    {% endif %}
+
 </div>
 {% endif %}
