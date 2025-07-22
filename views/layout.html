@@ -11,10 +11,16 @@ endblock %} {% block beforeMain %}
       src="/images/logo.png"
       alt="ApostropheCMS logo"
     />
-    <nav class="bp-nav"></nav>
-    {% if not data.user %}
-    <a class="bp-button bp-header__login" href="/login">Login</a>
-    {% endif %}
+    <nav class="bp-nav">
+        <a href="/" class="button primary transparent  {% if data.page._url == '/' %} active{% endif %}">Applikationen</a>
+        <a href="/wiki" class="button primary transparent  {% if data.page._url == '/wiki' %} active{% endif %}">Wiki</a>
+    </nav>
+      <div>
+          <button class="button tertiary">DE</button>
+      {% if not data.user %}
+      <a class="bp-button bp-header__login" href="/login">Login</a>
+      {% endif %}
+      </div>
   </header>
   <main class="bp-main">
     {% endblock %} {% block main %} {# Usually, your page templates in the
@@ -23,27 +29,17 @@ endblock %} {% block beforeMain %}
     block afterMain %}
   </main>
   <footer class="bp-footer">
-    <h3>Essential Links</h3>
-    <ul class="bp-footer__links">
-      <li>
-        <a href="https://apostrophecms.com/" target="_blank"
-          >About ApostropheCMS</a
-        >
-      </li>
-      <li>
-        <a href="https://chat.apostrophecms.com/" target="_blank">Discord</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/apostrophecms" target="_blank">Twitter</a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/apostrophecms/apostrophe/discussions"
-          target="_blank"
-          >GitHub Discussions</a
-        >
-      </li>
-    </ul>
+
+      <div class="bp-footer__links">
+          <a class="button primary transparent  ">swissgeol@swisstop.ch</a>
+          |
+          <a class="button primary transparent  ">Impressum & Rechtliches</a>
+      </div>
+      <img
+              class="bp-footer__logo"
+              src="/images/swiss-federation-logo.png"
+              alt="Swiss Federation Logo"
+      />
   </footer>
 </div>
 <script src="/js/dropdown.js"></script>

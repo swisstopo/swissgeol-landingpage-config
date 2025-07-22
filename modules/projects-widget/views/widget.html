@@ -24,12 +24,12 @@
     </div>
 
 
-    <a href="{{project.mainUrl}}" class="button normal primary default">{{project.title}}</a>
+    <a href="{{project.mainUrl}}" class="button normal primary ">{{project.title}}</a>
     {% if project.additionalUrls and project.additionalUrls|length == 1 %}
-    <a href="{{project.additionalUrls[0].url}}" class="button normal secondary default">{{project.descriptionItems[0].label}}</a>
+    <a href="{{project.additionalUrls[0].url}}" class="button normal secondary ">{{project.descriptionItems[0].label}}</a>
     {% elif project.additionalUrls and project.additionalUrls|length > 1 %}
     <div class="dropdown">
-        <button class="button normal secondary default dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+        <button class="button normal secondary  dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
             Select a link
             <span class="arrow">&#9662;</span>
         </button>

@@ -23,10 +23,12 @@ body {
 .bp-header,
 main,
 .bp-footer {
-  width: 100%;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 40px 212px
+}
+
+.bp-header,
+.bp-footer {
+  background-color: #1C2834;
 }
 
 .bp-header {
@@ -34,33 +36,40 @@ main,
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-bottom: 10px;
-  padding: 40px 0;
 }
 
 .bp-footer {
-  padding: 40px 0;
+  padding: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .bp-footer__links {
-  padding-left: 0px;
-  list-style: none;
-  text-align: center;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  color: white;
 
-  li {
-    display: inline-block;
-    margin-right: 20px;
-  }
-  li:last-child {
-    margin-right: 0;
-  }
 }
 
 .bp-header__logo {
   display: block;
-  width: 190px;
+  width: 98px;
   max-width: 100%;
   object-fit: contain;
+}
+
+.bp-footer__logo {
+  display: block;
+  width: 257px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.bp-nav {
+  display: flex;
+  gap: 6px;
 }
 
 .bp-header__login {

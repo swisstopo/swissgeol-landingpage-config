@@ -11,8 +11,6 @@ a {
 
 }
 
-
-
 .button {
   font-family: var(--sgc-typo-button--family);
   font-weight: var(--sgc-typo-button--weight);
@@ -23,9 +21,9 @@ a {
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: var(--sgc-button-padding-v) var(--sgc-button-padding-h);
+  padding: var(--sgc-button-padding-v, 7px) var(--sgc-button-padding-h, 11px);
   border: 1px solid;
-  border-radius: var(--sgc-button-radius);
+  border-radius: var(--sgc-button-radius, 4px);
   cursor: var(--sgc-button-cursor, pointer);
   width: fit-content;
 
@@ -66,17 +64,6 @@ a {
   }
 }
 
-:host([active]) .button:not([disabled]):not([aria-disabled]) {
-  color: var(--sgc-button-text--active);
-  background-color: var(--sgc-button-bg--active);
-  border-color: var(--sgc-button-border--active);
-}
-
-::slotted(ngm-core-icon) {
-  width: var(--sgc-button-icon-width, var(--sgc-button-icon-size, 20px));
-  height: var(--sgc-button-icon-height, var(--sgc-button-icon-size, 20px));
-}
-
 /* small size */
 .small {
   --sgc-button-padding-v: var(--sgc-button-padding, 3px);
@@ -93,11 +80,6 @@ a {
 .large {
   --sgc-button-padding-v: var(--sgc-button-padding, 13px);
   --sgc-button-padding-h: var(--sgc-button-padding, 17px);
-}
-
-:host([size="large"]) ::slotted(ngm-core-icon) {
-  width: 24px;
-  height: 24px;
 }
 
 /* primary color */
@@ -148,8 +130,8 @@ a {
 
 /* tertiary color */
 .tertiary {
-  --sgc-button-text: var(--sgc-color-primary);
-  --sgc-button-bg: var(--sgc-color-bg--white);
+  --sgc-button-text: var(--sgc-color-bg--white);
+  --sgc-button-bg: transparent;
   --sgc-button-border: var(--sgc-button-bg);
 
   --sgc-button-text--hovered: var(--sgc-color-text--emphasis-medium);
@@ -170,13 +152,14 @@ a {
 }
 
 /* transparent */
-:host([transparent]:not([color="primary"])) {
+.transparent {
   --sgc-button-bg: transparent;
   --sgc-button-bg--disabled: transparent;
+  --sgc-button-border: transparent;
 }
 
-.default {
-  --sgc-button-radius: 4px;
+.active {
+  --sgc-button-bg: #3370834D;
 }
 
 /* icon variant */
@@ -188,24 +171,4 @@ a {
 
 :host([variant="icon-round"]) {
   --sgc-button-radius: 50%;
-}
-
-/* chip variant */
-.chip {
-  --sgc-button-padding-v: var(--sgc-button-padding, 3px);
-  --sgc-button-padding-h: var(--sgc-button-padding, 11px);
-  --sgc-button-radius: 22px;
-}
-
-/* justify */
-:host([justify="center"]) .button {
-  justify-content: center;
-}
-
-:host([justify="start"]) .button {
-  justify-content: flex-start;
-}
-
-:host([justify="end"]) .button {
-  justify-content: flex-end;
 }
