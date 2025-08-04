@@ -1,7 +1,26 @@
 {% set project = data.widget._selectedProject[0] %}
 
 {% if project %}
-<div>
+
+
+<div class="hero-container">
+    <div class="hero-container__content">
+    {% for image in project.images %}
+    {% set image = apos.image.first(image) %}
+    {% if image %}
+    {% set imageUrl = apos.attachment.url(image, {size: 'one-sixth' }) %}
+    {% else %}
+    <!-- Instead of an else you could choose to skip displaying an image. -->
+    {% set imageUrl = 'https://picsum.photos/200' %}
+    {% endif %}
+    <div class="hero-image">
+        <img src="{{ imageUrl }}" alt="{{ altText }}">
+    </div>
+    {% endfor %}
+    </div>
+</div>
+
+<div data-projects>
     {% set image = apos.image.first(project.image) %}
     {% if image %}
     {% set imageUrl = apos.attachment.url(image, {size: 'one-sixth' }) %}
@@ -14,9 +33,7 @@
             <img src="{{ imageUrl }}" alt="{{ altText }}">
         </div>
     </div>
-</div>
-<div>
-    <h2>{{ project.title }}</h2>
+<div class="project-content">
     <div class="description-items">
         {% for item in project.descriptionItems %}
         <span class="description-item">{{ item.label }}</span>
@@ -24,23 +41,29 @@
     </div>
 
 
-    <a href="{{project.mainUrl}}" class="button normal primary ">{{project.title}}</a>
-    {% if project.additionalUrls and project.additionalUrls|length == 1 %}
-    <a href="{{project.additionalUrls[0].url}}" class="button normal secondary ">{{project.descriptionItems[0].label}}</a>
-    {% elif project.additionalUrls and project.additionalUrls|length > 1 %}
-    <div class="dropdown">
-        <button class="button normal secondary  dropdown-toggle" type="button" aria-haspopup="true" aria-expanded="false">
-            Select a link
-            <span class="arrow">&#9662;</span>
-        </button>
-        <ul class="dropdown-menu" role="menu" hidden>
-            {% for urlItem in project.additionalUrls %}
-            <li><a href="{{ urlItem.url }}">{{ urlItem.label or 'Link ' ~ loop.index }}</a></li>
-            {% endfor %}
-        </ul>
-    </div>
+    <div class="actions">
 
-    {% endif %}
+        <a href="{{project.mainUrl}}" class="button primary ">{{project.title}}</a>
+        {% if project.additionalUrls and project.additionalUrls|length == 1 %}
+        <a href="{{project.additionalUrls[0].url}}" class="button secondary ">{{project.additionalUrls[0].label}}</a>
+        {% elif project.additionalUrls and project.additionalUrls|length > 1 %}
+        <div class="dropdown">
+            <button class="button secondary" dropdown-toggle aria-expanded="false">
+                Select a link
+                <span class="arrow">&#9662;</span>
+            </button>
+            <ul class="dropdown-menu" dropdown-content hidden>
+                {% for urlItem in project.additionalUrls %}
+                <li class="dropdown-menu__item"><a href="{{ urlItem.url }}">{{ urlItem.label or 'Link ' ~ loop.index }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        {% endif %}
+
+
 
 </div>
 {% endif %}
+</div>
+</div>

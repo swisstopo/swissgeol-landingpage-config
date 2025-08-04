@@ -48,7 +48,8 @@ export default {
                 },
             },
             "projects": {},
-            "dropdown": {}
+            "two-column": {
+            },
           },
         },
       },

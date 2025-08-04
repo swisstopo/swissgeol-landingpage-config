@@ -6,18 +6,27 @@ export default {
   },
   fields: {
     add: {
-      title: {
-        type: 'string',
-        label: 'Title',
-        required: true
-      },
       image: {
-        label: 'Project Photo',
+        label: 'Logo Image',
         type: 'area',
         options: {
           max: 1, // Nur ein Bild erlauben
           widgets: {
             '@apostrophecms/image': {} // Nur das Bild-Widget erlauben
+          }
+        }
+      },
+      images: {
+        type: 'array',
+        label: 'Hero Images',
+        fields: {
+          add: {
+            _image: {
+              type: 'relationship',
+              withType: '@apostrophecms/image',
+              label: 'Image',
+              required: true
+            }
           }
         }
       },

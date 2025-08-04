@@ -44,7 +44,6 @@ export default {
             "@apostrophecms/video": {},
             "button": {},
             "projects": {},
-            "dropdown": {}
           },
         },
       },

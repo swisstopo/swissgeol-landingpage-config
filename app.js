@@ -29,10 +29,44 @@ apostrophe({
         className: "bp-video-widget",
       },
     },
+    "@apostrophecms/i18n": {
+      options: {
+        defaultLocale: "de",
+        redirectToFirstLocale: true,
+        locales: {
+          de: {
+            label: 'Deutsch',
+            prefix: '/de'
+          },
+          en: {
+            label: 'English',
+            prefix: '/en'
+          },
+          fr: {
+            label: 'Français',
+            prefix: '/fr'
+          },
+          it: {
+            label: 'Italiano',
+            prefix: '/it'
+          }
+        }
+      },
+    },
+    'global-scripts': {
+      options: {
+        scripts: [
+          {
+            name: 'site',
+            when: 'always'
+          }
+        ]
+      }
+    },
     // Custom widgets
     "button-widget": {},
     "projects-widget": {},
-    "dropdown-widget": {},
+    "two-column-widget": {},
     // The project's custom piece type.
     'project': {},
     // `asset` supports the project's build for client-side assets.

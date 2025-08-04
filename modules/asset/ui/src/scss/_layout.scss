@@ -38,6 +38,12 @@ main,
   flex-wrap: wrap;
 }
 
+.bp-header__actions {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
 .bp-footer {
   padding: 48px;
   display: flex;
@@ -83,3 +89,29 @@ main,
   margin-left: auto;
   margin-right: auto;
 }
+
+.locales__list[hidden] {
+  display: none;
+}
+
+.locales__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  position: absolute;
+  z-index: 1000;
+}
+
+.locales__item a {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}
+
+.locales__item a:hover {
+  background: #f0f0f0;
+}
+
+

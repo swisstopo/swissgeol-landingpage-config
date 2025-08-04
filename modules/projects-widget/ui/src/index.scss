@@ -8,3 +8,64 @@
   border-bottom: 1px solid grey;
   padding: 24px 12px
 }
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+}
+
+.hero-container {
+  width: 250px;
+  height: 250px;
+  background-color: #00bf9a;
+  padding: 48px;
+}
+
+.hero-container__content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-image {
+  position: absolute;
+
+
+  &:last-child {
+    bottom: 0;
+    right: 0;
+  }
+}
+
+.actions {
+  display: flex;
+    flex-direction: row;
+    align-items: center;
+  gap: 6px;
+}
+
+.dropdown-menu[hidden] {
+  display: none;
+}
+
+.dropdown-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  position: absolute;
+  z-index: 1000;
+}
+
+.dropdown-menu__item a {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}
+
+.dropdown-menu__item a:hover {
+  background: #f0f0f0;
+}
+
