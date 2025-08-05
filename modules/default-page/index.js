@@ -42,8 +42,7 @@ export default {
             },
             "@apostrophecms/image": {},
             "@apostrophecms/video": {},
-            "button": {},
-            "projects": {},
+            "file": {},
           },
         },
       },
@@ -55,4 +54,13 @@ export default {
       },
     },
   },
+  handlers(self, options) {
+    return {
+      'beforeSend': {
+        async handlerName(req) {
+          console.log("here")
+        }
+      }
+    };
+  }
 };

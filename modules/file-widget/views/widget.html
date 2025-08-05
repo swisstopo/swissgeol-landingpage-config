@@ -1,0 +1,12 @@
+{% set file = apos.attachment.first(data.widget._file) %}
+<div class="file-widget">
+    {% if file.extension == 'pdf' %}
+    <a href="{{ apos.attachment.url(file) }}" target="_blank" rel="noopener noreferrer">{{file.title}}</a>
+    {% else %}
+    <a href="{{ apos.attachment.url(file) }}" download>{{file.title}}</a>
+    {% endif %}
+    <div class="chip">
+        <span >{{file.extension | upper }}</span>
+    </div>
+</div>
+
