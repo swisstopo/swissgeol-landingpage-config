@@ -5,18 +5,11 @@ export default {
   },
   fields: {
     add: {
-        _file: {
+        _files: {
             type: 'relationship',
             label: 'Selected File',
             withType: '@apostrophecms/file',
-            max: 1,
-            required: true,
-        },
-        fileLabel: {
-            type: 'string',
-            label: 'File Label',
-            required: true,
-            help: 'Label for the file link, e.g., "Download PDF"'
+            required: false,
         },
     }
   }

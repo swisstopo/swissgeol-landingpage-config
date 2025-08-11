@@ -68,6 +68,7 @@ apostrophe({
     "projects-widget": {},
     "two-column-widget": {},
     "file-widget": {},
+    "section-widget": {},
     // The project's custom piece type.
     'project': {},
     // `asset` supports the project's build for client-side assets.

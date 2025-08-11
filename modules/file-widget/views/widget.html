@@ -1,4 +1,5 @@
-{% set file = apos.attachment.first(data.widget._file) %}
+{% set files = apos.attachment.all(data.widget._files) %}
+{% for file in files %}
 <div class="file-widget">
     {% if file.extension == 'pdf' %}
     <a href="{{ apos.attachment.url(file) }}" target="_blank" rel="noopener noreferrer">{{file.title}}</a>
@@ -9,4 +10,5 @@
         <span >{{file.extension | upper }}</span>
     </div>
 </div>
+{% endfor %}
 

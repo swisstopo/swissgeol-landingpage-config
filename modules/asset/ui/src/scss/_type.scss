@@ -1,12 +1,40 @@
-h1,
-h2,
-h3 {
-  text-align: center;
+h1 {
+  font-family: var(--sgc-typo-h1--family);
+  font-weight: var(--sgc-typo-h1--weight);
+  font-size: var(--sgc-typo-h1--size);
+  line-height: var(--sgc-typo-h1--line-height);
+  letter-spacing: var(--sgc-typo-h1--letter-spacing);
+  margin: 0;
 }
 
-h1 {
-  font-size: 4em;
-  font-weight: 200;
+h2 {
+  font-family: var(--sgc-typo-h2--family);
+  font-weight: var(--sgc-typo-h2--weight);
+  font-size: var(--sgc-typo-h2--size);
+  line-height: var(--sgc-typo-h2--line-height);
+  letter-spacing: var(--sgc-typo-h2--letter-spacing);
+  margin: 0;
+}
+
+h3 {
+  font-family: var(--sgc-typo-h3--family);
+  font-weight: var(--sgc-typo-h3--weight);
+  font-size: var(--sgc-typo-h3--size);
+  line-height: var(--sgc-typo-h3--line-height);
+  letter-spacing: var(--sgc-typo-h3--letter-spacing);
+  margin: 0;
+}
+
+h4 {
+  font-family: var(--sgc-typo-h4--family);
+  font-weight: var(--sgc-typo-h4--weight);
+  font-size: var(--sgc-typo-h4--size);
+  line-height: var(--sgc-typo-h4--line-height);
+  letter-spacing: var(--sgc-typo-h4--letter-spacing);
+}
+
+p {
+  margin: 0
 }
 
 ::selection {

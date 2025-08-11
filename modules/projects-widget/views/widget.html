@@ -2,28 +2,25 @@
 
 {% if project %}
 
-
 <div class="hero-container">
     <div class="hero-container__content">
-    {% for image in project.images %}
-    {% set image = apos.image.first(image) %}
-    {% if image %}
-    {% set imageUrl = apos.attachment.url(image, {size: 'one-sixth' }) %}
-    {% else %}
-    <!-- Instead of an else you could choose to skip displaying an image. -->
-    {% set imageUrl = 'https://picsum.photos/200' %}
-    {% endif %}
-    <div class="hero-image">
-        <img src="{{ imageUrl }}" alt="{{ altText }}">
-    </div>
-    {% endfor %}
-    </div>
+{{project._heroImage1 }}    </div>
 </div>
+
+{% if project._heroImage1 and project._heroImage1[0] %}
+<img src="{{ apos.attachment.url(project._heroImage1[0], { size: 'full' }) }}"
+     alt="{{ project._heroImage1[0].title }}">
+{% endif %}
+
+{% if project._heroImage2 and project._heroImage2[0] %}
+<img src="{{ apos.attachment.url(project._heroImage2[0], { size: 'full' }) }}"
+     alt="{{ project._heroImage2[0].title }}">
+{% endif %}
 
 <div data-projects>
     {% set image = apos.image.first(project.image) %}
     {% if image %}
-    {% set imageUrl = apos.attachment.url(image, {size: 'one-sixth' }) %}
+    {% set imageUrl = apos.attachment.url(image) %}
     {% else %}
     <!-- Instead of an else you could choose to skip displaying an image. -->
     {% set imageUrl = 'https://picsum.photos/200' %}
@@ -67,3 +64,6 @@
 {% endif %}
 </div>
 </div>
+<script>
+    console.log("Project data:", {{ project | dump | safe }});
+</script>

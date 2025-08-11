@@ -1,3 +1,37 @@
 {% extends "layout.html" %} {% block main %}
-{% area data.page, 'main' %}
+<div class="main">
+<div class="hero">
+    <div class="hero__content">
+        <h1>{{ data.page.title }}</h1>
+        <span class="hero__text">
+                    {{ data.page.text }}
+        </span>
+        {% if data.page.heroButtonLink %}
+        <a href="{{ data.page.heroButtonLink }}" class="button primary">
+            {{ data.page.heroButtonLabel }}
+        </a>
+        {% endif %}
+    </div>
+
+        {% set baseImg = apos.image.first(data.page._appImageBase) %}
+        {% if baseImg %}
+        {% set imageUrl = apos.attachment.url(baseImg) %}
+        <img class="overlapping-image layer-base" src="{{ imageUrl }}" alt="{{ altText }}">
+        {% endif %}
+        {% set middleImg =  apos.image.first(data.page._appImageMiddle) %}
+        {% if middleImg %}
+        {% set imageUrl = apos.attachment.url(middleImg) %}
+        <img class="overlapping-image layer-middle" src="{{ imageUrl }}" alt="{{ altText }}">
+        {% endif %}
+        {% set topImg =  apos.image.first(data.page._appImageTop) %}
+        {% if topImg %}
+        {% set imageUrl = apos.attachment.url(topImg) %}
+        <img class="overlapping-image layer-top" src="{{ imageUrl }}" alt="{{ altText }}">
+        {% endif %}
+</div>
+<div class="apps">
+    {% area data.page, 'main' %}
+
+</div>
+</div>
 {% endblock %}

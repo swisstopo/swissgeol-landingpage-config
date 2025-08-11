@@ -10,25 +10,28 @@ export default {
         label: 'Logo Image',
         type: 'area',
         options: {
-          max: 1, // Nur ein Bild erlauben
+          max: 1,
           widgets: {
-            '@apostrophecms/image': {} // Nur das Bild-Widget erlauben
+            '@apostrophecms/image': {}
           }
         }
       },
-      images: {
-        type: 'array',
-        label: 'Hero Images',
-        fields: {
-          add: {
-            _image: {
-              type: 'relationship',
-              withType: '@apostrophecms/image',
-              label: 'Image',
-              required: true
-            }
-          }
-        }
+      _heroImage1: {
+        type: 'relationship',
+        label: 'Hero Image 1',
+        withType: '@apostrophecms/image',
+        required: true
+      },
+      _heroImage2: {
+        type: 'relationship',
+        label: 'Hero Image 2 (Optional)',
+        withType: '@apostrophecms/image',
+        required: false
+      },
+      backgroundColor: {
+        type: 'string',
+        label: 'Background Color Class',
+        help: 'Enter a CSS class name for background color (e.g., bg-red, bg-blue, bg-gray)'
       },
       mainUrl: {
         type: 'url',

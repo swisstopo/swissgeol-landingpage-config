@@ -1,44 +1,14 @@
 export default {
+  extend: '@apostrophecms/widget-type',
   options: {
-    label: "Home Page",
+    label: 'Section Widget',
   },
   fields: {
     add: {
-        title: {
-            type: "string",
-            label: "Title",
-            required: true,
-        },
-      text: {
+      title: {
         type: "string",
-        label: "Text",
+        label: "Title",
         required: true,
-      },
-        heroButtonLabel: {
-            type: 'string',
-            label: 'Button Label'
-        },
-        heroButtonLink: {
-            type: 'url',
-            label: 'Button Link'
-        },
-      _appImageBase: {
-        type: 'relationship',
-        label: 'Application Image (Bottom Layer)',
-        max: 1,
-        withType: '@apostrophecms/image'
-      },
-      _appImageMiddle: {
-        type: 'relationship',
-        label: 'Application Image (Middle Layer)',
-        max: 1,
-        withType: '@apostrophecms/image'
-      },
-      _appImageTop: {
-        type: 'relationship',
-        label: 'Application Image (Top Layer)',
-        max: 1,
-        withType: '@apostrophecms/image'
       },
       main: {
         type: "area",
@@ -65,6 +35,9 @@ export default {
                   label: "Paragraph (P)",
                 },
                 {
+                  tag: "h2",
+                  label: "Heading 2 (H2)",
+                }, {
                   tag: "h3",
                   label: "Heading 3 (H3)",
                 },
@@ -76,16 +49,7 @@ export default {
               insert: ["table", "importTable", "image"],
             },
             "@apostrophecms/image": {},
-            "@apostrophecms/video": {},
-            "button": {
-                label: "Button Widget",
-                options: {
-                    className: "bp-button-widget",
-                },
-            },
-            "projects": {},
-            "two-column": {
-            },
+            "file": {},
           },
         },
       },
