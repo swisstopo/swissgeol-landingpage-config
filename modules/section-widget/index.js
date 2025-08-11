@@ -50,6 +50,7 @@ export default {
             },
             "@apostrophecms/image": {},
             "file": {},
+            "impressum": {}
           },
         },
       },
