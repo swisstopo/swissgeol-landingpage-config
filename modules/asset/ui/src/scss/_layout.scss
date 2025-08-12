@@ -14,13 +14,15 @@ main {
 
 body {
   min-height: 100vh;
-  // Nice system fonts.
   font-family:
     -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-.bp-header,
+.bp-header {
+  padding: 16px;
+}
+
 .bp-footer {
   padding: 40px 212px
 }
@@ -44,17 +46,22 @@ body {
 }
 
 .bp-footer {
-  padding: 48px;
+  padding: 48px 16px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 36px;
 }
 
 .bp-footer__links {
   display: flex;
-  gap: 6px;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   color: white;
+
+  & .bp-footer__links__divider {
+    display: none;
+  }
 
 }
 
@@ -110,3 +117,25 @@ body {
 }
 
 
+@media (min-width: 768px) {
+  .bp-header {
+    padding: 40px 212px
+  }
+
+
+  .bp-footer {
+    padding: 48px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .bp-footer__links {
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+
+    & .bp-footer__links__divider {
+      display: block;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 
 .hero,
 .apps {
-  padding: 60px 11px;
+  padding: 60px 16px 0 16px;
 
 }
 
@@ -14,16 +14,15 @@
 .hero__content {
   display: flex;
   flex-direction: column;
-  gap: 36px;
-  margin-bottom: 100px;
+  gap: 24px;
 }
 
 .hero__text {
   max-width: 720px;
   color: white;
   font-weight: 400;
-  font-size: 22px;
-  line-height: 29px;
+  font-size: 16px;
+  line-height: 24px;
   letter-spacing: -0.05px;
 }
 
@@ -32,8 +31,8 @@
   color: white;
   text-align: left;
   font-weight: 600;
-  font-size: 54px;
-  line-height: 82px;
+  font-size: 30px;
+  line-height: 100%;
   letter-spacing: -0.05px;
 }
 
@@ -60,12 +59,26 @@ img.layer-top {
 
 
 @media (min-width: 768px) {
-  .hero,
-  {
-    padding: 90px 212px
+  .hero {
+    padding: 90px 10vw;
+
+    .hero__content {
+      gap: 36px;
+      margin-bottom: 100px;
+    }
+
+    h1 {
+      font-size: 54px;
+      line-height: 82px;
+    }
+
+    .hero__text {
+      font-size: 22px;
+      line-height: 29px;
+    }
   }
 
   .apps {
-    padding: 350px 10vw 180px 10vw;
+    padding: 350px 10vw 0 10vw;
   }
 }
