@@ -1,14 +1,15 @@
 
-.hero,
 .apps {
-  padding: 60px 16px 0 16px;
+  padding: 260px 16px 0 16px;
 
 }
 
 .hero {
+  padding: 60px 16px 0 16px;
   background-color: var(--sgc-color-secondary--800);
   position: relative;
-  height: 900px;
+  height: 450px;
+  overflow-x: clip;
 }
 
 .hero__content {
@@ -36,24 +37,38 @@
   letter-spacing: -0.05px;
 }
 
-img.layer-base {
+.layer-base {
   position: absolute;
-  left: 5%;
-  bottom: -290px;
+  left: 0;
+  top: 500px;
+  width: 281px;
+  height: 228px;
+  overflow: hidden;
 }
 
-img.layer-middle {
+.layer-middle {
   position: absolute;
-  height: 904px;
-  left: 194px;
+  left: 5vw;
   z-index: 3;
-  top: 424px;
+  top: 350px;
+  width: 474px;
+  height: 359px;
+  overflow: hidden;
 }
 
-img.layer-top {
+.layer-top {
   position: absolute;
-  right: 5%;
-  top: 90px;
+  right: 0;
+  top: 300px;
+  width: 280px;
+  height: 227px;
+  overflow: hidden;
+}
+
+.overlapping-image {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 
@@ -61,6 +76,7 @@ img.layer-top {
 @media (min-width: 768px) {
   .hero {
     padding: 90px 10vw;
+    height: 900px;
 
     .hero__content {
       gap: 36px;
@@ -79,5 +95,51 @@ img.layer-top {
 
   .apps {
     padding: 350px 10vw 0 10vw;
+  }
+
+  .layer-base {
+    left: 0;
+    top: 600px;
+    width: 80vw;
+    height: 55vh;
+  }
+
+  .layer-middle {
+    left: 5vw;
+    z-index: 3;
+    top: 470px;
+    width: 90vw;
+    height: 70vh;
+  }
+
+  .layer-top {
+    right: 0;
+    top: 380px;
+    width: 60vw;
+    height: 60vh;
+  }
+}
+
+@media (min-width: 1590px) {
+  .layer-base {
+    left: 0;
+    top: 500px;
+    width: 836px;
+    height: 592px;
+  }
+
+  .layer-middle {
+    left: 5vw;
+    z-index: 3;
+    top: 350px;
+    width: 1496px;
+    height: 904px;
+  }
+
+  .layer-top {
+    right: 48px;
+    top: 90px;
+    width: 576px;
+    height: 965px;
   }
 }
