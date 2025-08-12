@@ -2,7 +2,6 @@ export default {
   extend: '@apostrophecms/piece-type',
   options: {
     label: 'Project',
-    // Additionally add a `pluralLabel` option if needed.
   },
   fields: {
     add: {
@@ -16,22 +15,27 @@ export default {
           }
         }
       },
-      _heroImage1: {
-        type: 'relationship',
-        label: 'Hero Image 1',
-        withType: '@apostrophecms/image',
-        required: true
-      },
-      _heroImage2: {
-        type: 'relationship',
-        label: 'Hero Image 2 (Optional)',
-        withType: '@apostrophecms/image',
-        required: false
-      },
       backgroundColor: {
-        type: 'string',
+        type: 'select',
         label: 'Background Color Class',
-        help: 'Enter a CSS class name for background color (e.g., bg-red, bg-blue, bg-gray)'
+        choices: [
+          {
+            label: 'Blue (Assets)',
+            value: 'blue'
+          },
+          {
+            label: 'Green (Viewer)',
+            value: 'green'
+          },
+          {
+            label: 'Red (Boreholes)',
+            value: 'red'
+          },
+          {
+            label: 'Orange (Raw MAterials',
+            value: 'orange'
+          },
+        ],
       },
       mainUrl: {
         type: 'url',

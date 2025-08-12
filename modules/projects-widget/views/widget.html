@@ -1,44 +1,41 @@
 {% set project = data.widget._selectedProject[0] %}
-
+{% set images = apos.attachment.all(data.widget._images) %}
 {% if project %}
 
-<div class="hero-container">
+<div class="project">
+<div class="hero-container {{project.backgroundColor}}">
     <div class="hero-container__content">
-{{project._heroImage1 }}    </div>
+        {% if images.length == 1 %}
+
+
+        {% set imageUrl = apos.attachment.url(images[0]) %}
+        <img src="{{ imageUrl }}" alt="{{ altText }}" class="image-single">
+        {% else %}
+
+        {% set imageUrl1 = apos.attachment.url(images[0]) %}
+        <img src="{{ imageUrl1 }}" alt="{{ altText }}" class="image-double top">
+
+        {% set imageUrl2 = apos.attachment.url(images[1]) %}
+        <img src="{{ imageUrl2 }}" alt="{{ altText }}" class="image-double bottom">
+        {% endif %}
+    </div>
 </div>
 
-{% if project._heroImage1 and project._heroImage1[0] %}
-<img src="{{ apos.attachment.url(project._heroImage1[0], { size: 'full' }) }}"
-     alt="{{ project._heroImage1[0].title }}">
-{% endif %}
-
-{% if project._heroImage2 and project._heroImage2[0] %}
-<img src="{{ apos.attachment.url(project._heroImage2[0], { size: 'full' }) }}"
-     alt="{{ project._heroImage2[0].title }}">
-{% endif %}
-
-<div data-projects>
     {% set image = apos.image.first(project.image) %}
     {% if image %}
     {% set imageUrl = apos.attachment.url(image) %}
-    {% else %}
-    <!-- Instead of an else you could choose to skip displaying an image. -->
-    {% set imageUrl = 'https://picsum.photos/200' %}
-    {% endif %}
     <div class="review col-md-4">
         <div class="review__image">
             <img src="{{ imageUrl }}" alt="{{ altText }}">
         </div>
     </div>
-<div class="project-content">
+    {% endif %}
     <div class="description-items">
         {% for item in project.descriptionItems %}
         <span class="description-item">{{ item.label }}</span>
         {% endfor %}
     </div>
-
-
-    <div class="actions">
+    <div class="actions" data-projects>
 
         <a href="{{project.mainUrl}}" class="button primary ">{{project.title}}</a>
         {% if project.additionalUrls and project.additionalUrls|length == 1 %}
@@ -63,7 +60,3 @@
 </div>
 {% endif %}
 </div>
-</div>
-<script>
-    console.log("Project data:", {{ project | dump | safe }});
-</script>
