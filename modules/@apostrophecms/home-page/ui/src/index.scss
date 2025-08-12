@@ -6,7 +6,7 @@
 }
 
 .hero {
-  background-color: #1C2834;
+  background-color: var(--sgc-color-secondary--800);
   position: relative;
   height: 900px;
 }
@@ -68,7 +68,6 @@ img.layer-top {
     }
 
     h1 {
-      font-size: 54px;
       line-height: 82px;
     }
 

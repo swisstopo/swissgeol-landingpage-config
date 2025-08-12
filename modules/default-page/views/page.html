@@ -7,9 +7,22 @@ template that lives in the top-level views/ folder for convenience #} {% extends
     <span>{{data.page.description}}</span>
 </div>
 </div>
-
-<div class="content">
+<div class="nav-mobile" data-projects>
+    <a  dropdown-toggle aria-expanded="false">
+        Select a link
+    </a>
+    <ul class="nav-mobile__menu" dropdown-content hidden>
+        {% for widget in data.page.main.items %}
+        <li class="dropdown-menu__item"><a href="#{{ widget.title }}">{{ widget.title }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+<div class="content" >
     <section >
+
+
+
+
         {% area data.page, 'main' %}
     </section>
     <nav class="section-nav">
@@ -27,8 +40,9 @@ template that lives in the top-level views/ folder for convenience #} {% extends
 <script>
 
         function onScroll() {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.section-nav a');
+            const sections = document.querySelectorAll('section h2[id]');
+            const navLinksDesktop = document.querySelectorAll('.section-nav a');
+            const toggleLabel = document.querySelector('[dropdown-toggle]');
             let scrollPosition = window.scrollY; // adjust for sticky header
 
             sections.forEach((section) => {
@@ -37,15 +51,22 @@ template that lives in the top-level views/ folder for convenience #} {% extends
                     section.offsetTop + section.offsetHeight > scrollPosition
                 ) {
                     const id = section.getAttribute('id');
-                    navLinks.forEach((link) => {
+                    navLinksDesktop.forEach((link) => {
                         link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
                     });
+                    console.log(section.textContent.trim())
+                    if (toggleLabel.innerText !== section.textContent.trim()) {
+                        toggleLabel.innerText = section.textContent.trim();
+                    }
                 }
             });
         }
 
         window.addEventListener('scroll', onScroll);
         onScroll(); // run on load
+        const toggleLabel = document.querySelector('[dropdown-toggle]')
+        const sections = document.querySelectorAll('section h2[id]')
+        toggleLabel.innerText = sections[0].textContent.trim()
 
 </script>
 

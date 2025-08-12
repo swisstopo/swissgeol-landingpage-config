@@ -15,6 +15,11 @@ export default () => {
                     list.hidden = isExpanded;
                 });
 
+                list.addEventListener('click', () => {
+                    toggler.setAttribute('aria-expanded', 'false');
+                    list.hidden = true;
+                })
+
                 document.addEventListener('click', (event) => {
                     if (!toggler.contains(event.target) && !list.contains(event.target)) {
                         toggler.setAttribute('aria-expanded', 'false');

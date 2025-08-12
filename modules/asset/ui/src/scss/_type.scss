@@ -1,9 +1,9 @@
 h1 {
   font-family: var(--sgc-typo-h1--family);
   font-weight: var(--sgc-typo-h1--weight);
-  font-size: var(--sgc-typo-h1--size);
-  line-height: var(--sgc-typo-h1--line-height);
-  letter-spacing: var(--sgc-typo-h1--letter-spacing);
+  font-size: 30px;
+  line-height: 100%;
+  letter-spacing: -0.05px;
   margin: 0;
 }
 
@@ -95,4 +95,14 @@ pre {
   font-size: 16px;
   font-weight: 400;
   padding: 20px 30px;
+}
+
+
+@media (min-width: 768px) {
+
+  h1 {
+    font-size: var(--sgc-typo-h1--size);
+    line-height: var(--sgc-typo-h1--line-height);
+    letter-spacing: var(--sgc-typo-h1--letter-spacing);
+  }
 }

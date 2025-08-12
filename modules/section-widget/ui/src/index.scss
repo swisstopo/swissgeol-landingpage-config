@@ -1,10 +1,22 @@
-section > .apos-area {
+.section {
+  padding-bottom: 64px;
+}
+
+.section > .apos-area {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 18px;
+
 }
 
-section  > h2 {
+.section  > h2 {
   margin-bottom: 40px;
 }
+
+@media (min-width: 768px) {
+.section  {
+    padding-bottom: 140px;
+  }
+}
+
