@@ -26,8 +26,8 @@
   left: 0;
   margin-top: 2px;
   padding: 0;
-  background: white;
-  border: 1px solid #DFE4E9;
+  background: var(--sgc-color-bg--white);
+  border: 1px solid var(--sgc-color-border--default);
   border-radius: 4px;
   min-width: 100px;
   box-shadow: 4px 4px 2px 0px rgba(0, 0, 0, 0.12);
@@ -40,11 +40,11 @@
 }
 
 .dropdown-menu li a {
-  color: #1C2834;
+  color: var(--sgc-color-text--emphasis-high);
 }
 
 .dropdown-menu li:hover,
 .dropdown-menu li:focus {
-  background-color: #eee;
+  background-color: var(--sgc-color-bg--white--hovered);
   outline: none;
 }

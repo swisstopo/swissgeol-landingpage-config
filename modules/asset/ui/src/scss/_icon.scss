@@ -3,7 +3,7 @@
   mask: url('/modules/asset/icons/i_link.svg') no-repeat center;
   width: 24px;
   height: 24px;
-  background-color: #337083;
+  background-color: var(--sgc-color-primary);
 }
 
 .download-icon {
@@ -11,15 +11,22 @@
   mask: url('/modules/asset/icons/i_download.svg') no-repeat center;
   width: 24px;
   height: 24px;
-  background-color: #337083;
+  background-color: var(--sgc-color-primary);
 }
 
+.document-icon {
+  -webkit-mask: url('/modules/asset/icons/i_document.svg') no-repeat center;
+  mask: url('/modules/asset/icons/i_document.svg') no-repeat center;
+  width: 24px;
+  height: 24px;
+  background-color: black;
+}
 .chevron-down-icon {
   -webkit-mask: url('/modules/asset/icons/i_chevron_down.svg') no-repeat center;
   mask: url('/modules/asset/icons/i_chevron_down.svg') no-repeat center;
   width: 24px;
   height: 24px;
-  background-color: white;
+  background-color: var(--sgc-color-bg--white);
 }
 
 button[aria-expanded="true"] .chevron-down-icon {
@@ -31,7 +38,7 @@ button[aria-expanded="true"] .chevron-down-icon {
   mask: url('/modules/asset/icons/i_arrow_down.svg') no-repeat center;
   width: 24px;
   height: 24px;
-  background-color: white;
+  background-color: var(--sgc-color-bg--white);
 }
 
 .arrow-ne-icon {
@@ -39,11 +46,11 @@ button[aria-expanded="true"] .chevron-down-icon {
   mask: url('/modules/asset/icons/i_arrow_ne.svg') no-repeat center;
   width: 24px;
   height: 24px;
-  background-color: white;
+  background-color: var(--sgc-color-bg--white);
 }
 
 .icon-primary {
-  background-color:  #337083;
+  background-color:  var(--sgc-color-primary);
 }
 
 button:hover .icon-primary,

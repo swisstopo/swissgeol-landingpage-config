@@ -9,8 +9,8 @@
   justify-content: center;
   gap: 6px;
   color: var(--sgc-color-secondary--800);
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: 500;
+  font-size: var(--sgc-typo-overline--size);
+  line-height: var(--sgc-typo-overline--line-height);
+  font-weight: var(--sgc-typo-overline--weight);
   font-family: 'Inter', sans-serif;
 }

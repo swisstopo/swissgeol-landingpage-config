@@ -64,7 +64,6 @@ apostrophe({
       }
     },
     // Custom widgets
-    "button-widget": {},
     "projects-widget": {},
     "two-column-widget": {},
     "file-widget": {},
