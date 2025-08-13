@@ -13,3 +13,57 @@
   height: 24px;
   background-color: #337083;
 }
+
+.chevron-down-icon {
+  -webkit-mask: url('/modules/asset/icons/i_chevron_down.svg') no-repeat center;
+  mask: url('/modules/asset/icons/i_chevron_down.svg') no-repeat center;
+  width: 24px;
+  height: 24px;
+  background-color: white;
+}
+
+button[aria-expanded="true"] .chevron-down-icon {
+  transform: rotate(180deg);
+}
+
+.arrow-down-icon {
+  -webkit-mask: url('/modules/asset/icons/i_arrow_down.svg') no-repeat center;
+  mask: url('/modules/asset/icons/i_arrow_down.svg') no-repeat center;
+  width: 24px;
+  height: 24px;
+  background-color: white;
+}
+
+.arrow-ne-icon {
+  -webkit-mask: url('/modules/asset/icons/i_arrow_ne.svg') no-repeat center;
+  mask: url('/modules/asset/icons/i_arrow_ne.svg') no-repeat center;
+  width: 24px;
+  height: 24px;
+  background-color: white;
+}
+
+.icon-primary {
+  background-color:  #337083;
+}
+
+button:hover .icon-primary,
+button:focus .icon-primary,
+a:hover .icon-primary,
+a:focus .icon-primary {
+    background-color: var(--sgc-button-text--hovered);
+}
+
+.icon-secondary {
+ background-color: var(--sgc-color-primary);
+}
+
+button:hover .icon-secondary,
+button:focus .icon-secondary,
+a:hover .icon-secondary,
+a:focus .icon-secondary {
+  background-color: var(--sgc-button-text--hovered);
+}
+
+.adjust-position {
+  margin-bottom: 2px;
+}

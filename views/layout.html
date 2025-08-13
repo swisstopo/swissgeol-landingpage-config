@@ -8,20 +8,23 @@ endblock %} {% block beforeMain %}
     <img
       class="bp-header__logo"
       src="/images/logo.png"
-      alt="ApostropheCMS logo"
+      alt="Swissgeol logo"
     />
     <nav class="bp-nav">
         {% set currentUrl = data.page._url%}
         {% set locale = data.locale  %}
-        <a href="/{{data.locale}}/" class="button primary transparent  {% if data.page._url == '/' ~ locale ~ '/' %} active{% endif %}">Applikationen </a>
-        <a href="/{{data.locale}}/wiki" class="button primary transparent  {% if currentUrl == '/' ~ locale ~ '/wiki' %} active{% endif %}">Wiki</a>
+        <a href="/{{data.locale}}/" class="button primary transparent  {% if data.page._url == '/' ~ locale ~ '/' %} active{% endif %}">{{ __t('applications') }} </a>
+        <a href="/{{data.locale}}/wiki" class="button primary transparent  {% if currentUrl == '/' ~ locale ~ '/wiki' %} active{% endif %}">{{ __t('wiki') }}</a>
     </nav>
       <div class="bp-header__actions">
-          <div>
-              <button class="button tertiary" data-locales-toggle aria-expanded="false">{{data.locale | upper}}</button>
-              <ul class="locales__list" data-locales hidden>
+          <div class="dropdown">
+              <button class="button primary transparent " data-locales-toggle aria-expanded="false">
+                  {{data.locale | upper }}
+                  <span class="chevron-down-icon adjust-position"></span>
+              </button>
+              <ul class="dropdown-menu" data-locales hidden>
                   {% for localization in data.localizations %}
-                  <li class="locales__item">
+                  <li>
 
                       <a href="{{ localization._url or localization.homePageUrl }}">
                           {{ localization.label }}

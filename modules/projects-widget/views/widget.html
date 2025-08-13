@@ -43,18 +43,20 @@
     </div>
     <div class="actions" data-projects>
 
-        <a href="{{project.mainUrl}}" class="button primary ">{{project.title}}</a>
+        <a href="{{project.mainUrl}}" class="button primary ">{{project.title}}
+            <span class="arrow-ne-icon"></span></a>
         {% if project.additionalUrls and project.additionalUrls|length == 1 %}
-        <a href="{{project.additionalUrls[0].url}}" class="button secondary ">{{project.additionalUrls[0].label}}</a>
+        <a href="{{project.additionalUrls[0].url}}" class="button secondary ">{{project.additionalUrls[0].label}}
+            <span class="arrow-ne-icon icon-primary"></span></a>
         {% elif project.additionalUrls and project.additionalUrls|length > 1 %}
         <div class="dropdown">
             <button class="button secondary" dropdown-toggle aria-expanded="false">
                 {{ __t('more') }}
-                <span class="arrow">&#9662;</span>
+                <span class="chevron-down-icon icon-secondary"></span>
             </button>
             <ul class="dropdown-menu" dropdown-content hidden>
                 {% for urlItem in project.additionalUrls %}
-                <li class="dropdown-menu__item"><a href="{{ urlItem.url }}">{{ urlItem.label or 'Link ' ~ loop.index }}</a></li>
+                <li><a href="{{ urlItem.url }}">{{ urlItem.label or 'Link ' ~ loop.index }}</a></li>
                 {% endfor %}
             </ul>
         </div>

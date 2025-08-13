@@ -83,29 +83,6 @@
   gap: 6px;
 }
 
-.dropdown-menu[hidden] {
-  display: none;
-}
-
-.dropdown-menu {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background: #fff;
-  border: 1px solid #ccc;
-  position: absolute;
-  z-index: 1000;
-}
-
-.dropdown-menu__item a {
-  display: block;
-  padding: 0.5rem 1rem;
-  text-decoration: none;
-}
-
-.dropdown-menu__item a:hover {
-  background: #f0f0f0;
-}
 
 
 @media (min-width: 768px) {

@@ -13,7 +13,7 @@ template that lives in the top-level views/ folder for convenience #} {% extends
     </a>
     <ul class="nav-mobile__menu" dropdown-content hidden>
         {% for widget in data.page.main.items %}
-        <li class="dropdown-menu__item"><a href="#{{ widget.title }}">{{ widget.title }}</a></li>
+        <li><a href="#{{ widget.title }}">{{ widget.title }}</a></li>
         {% endfor %}
     </ul>
 </div>
