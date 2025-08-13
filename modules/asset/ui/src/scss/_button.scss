@@ -8,7 +8,6 @@
 
 a {
   text-decoration: none;
-
 }
 
 .button {
@@ -50,8 +49,8 @@ a {
     background-color: var(--sgc-button-bg--pressed);
     border-color: var(--sgc-button-border--pressed);
     cursor: var(
-                    --sgc-button-cursor--pressed,
-                    var(--sgc-button-cursor, pointer)
+      --sgc-button-cursor--pressed,
+      var(--sgc-button-cursor, pointer)
     );
   }
 
@@ -159,7 +158,7 @@ a {
 }
 
 .active {
-  --sgc-button-bg: #3370834D;
+  --sgc-button-bg: #3370834d;
 }
 
 /* icon variant */

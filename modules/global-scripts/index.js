@@ -1,7 +1,5 @@
 export default {
-    options: {
-        scripts: [
-            { name: 'site', when: 'always' }
-        ]
-    }
+  options: {
+    scripts: [{ name: "site", when: "always" }],
+  },
 };

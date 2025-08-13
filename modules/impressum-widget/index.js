@@ -1,61 +1,59 @@
 export default {
-  extend: '@apostrophecms/widget-type',
+  extend: "@apostrophecms/widget-type",
   options: {
-    label: 'Impressum Widget',
+    label: "Impressum Widget",
   },
   fields: {
     add: {
       _image: {
-        type: 'relationship',
-        label: 'Selected File',
-        withType: '@apostrophecms/image',
+        type: "relationship",
+        label: "Selected File",
+        withType: "@apostrophecms/image",
         required: false,
-        max: 1
+        max: 1,
       },
       main: {
-        type: 'area',
+        type: "area",
         options: {
           widgets: {
-            '@apostrophecms/rich-text': {
+            "@apostrophecms/rich-text": {
               toolbar: [
-                'styles',
-                '|',
-                'bold',
-                'italic',
-                'strike',
-                'link',
-                '|',
-                'bulletList',
-                'orderedList',
-                '|',
-                'table',
-                'image'
+                "styles",
+                "|",
+                "bold",
+                "italic",
+                "strike",
+                "link",
+                "|",
+                "bulletList",
+                "orderedList",
+                "|",
+                "table",
+                "image",
               ],
               styles: [
                 {
-                  tag: 'p',
-                  label: 'Paragraph (P)'
+                  tag: "p",
+                  label: "Paragraph (P)",
                 },
                 {
-                  tag: 'h2',
-                  label: 'Heading 2 (H2)'
+                  tag: "h2",
+                  label: "Heading 2 (H2)",
                 },
                 {
-                  tag: 'h3',
-                  label: 'Heading 3 (H3)'
+                  tag: "h3",
+                  label: "Heading 3 (H3)",
                 },
                 {
-                  tag: 'h4',
-                  label: 'Heading 4 (H4)'
-                }
+                  tag: "h4",
+                  label: "Heading 4 (H4)",
+                },
               ],
-              insert: ['table', 'importTable', 'image']
+              insert: ["table", "importTable", "image"],
             },
-          }
-        }
-      }
-
+          },
+        },
+      },
     },
   },
-
 };

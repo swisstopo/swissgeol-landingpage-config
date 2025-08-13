@@ -14,7 +14,7 @@ export default {
         type: "area",
         options: {
           widgets: {
-            "section": {}
+            section: {},
           },
         },
       },

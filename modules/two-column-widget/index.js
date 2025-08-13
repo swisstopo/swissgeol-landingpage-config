@@ -1,30 +1,29 @@
 export default {
-  extend: '@apostrophecms/widget-type',
+  extend: "@apostrophecms/widget-type",
   options: {
-    label: 'Two Column Widget',
+    label: "Two Column Widget",
   },
   fields: {
     add: {
       columnLeft: {
-        type: 'area',
-        label: 'Left Column Content',
+        type: "area",
+        label: "Left Column Content",
         options: {
           widgets: {
-            "projects": {},
-
-          }
-        }
+            projects: {},
+          },
+        },
       },
       // This will be the area for the right column
       columnRight: {
-        type: 'area',
-        label: 'Right Column Content',
+        type: "area",
+        label: "Right Column Content",
         options: {
           widgets: {
-            "projects": {},
-          }
-        }
-      }
-    }
-  }
+            projects: {},
+          },
+        },
+      },
+    },
+  },
 };

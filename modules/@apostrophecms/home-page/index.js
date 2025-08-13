@@ -4,41 +4,41 @@ export default {
   },
   fields: {
     add: {
-        title: {
-            type: "string",
-            label: "Title",
-            required: true,
-        },
+      title: {
+        type: "string",
+        label: "Title",
+        required: true,
+      },
       text: {
         type: "string",
         label: "Text",
         required: true,
       },
-        heroButtonLabel: {
-            type: 'string',
-            label: 'Button Label'
-        },
-        heroButtonLink: {
-            type: 'url',
-            label: 'Button Link'
-        },
+      heroButtonLabel: {
+        type: "string",
+        label: "Button Label",
+      },
+      heroButtonLink: {
+        type: "url",
+        label: "Button Link",
+      },
       _appImageBase: {
-        type: 'relationship',
-        label: 'Application Image (Bottom Layer)',
+        type: "relationship",
+        label: "Application Image (Bottom Layer)",
         max: 1,
-        withType: '@apostrophecms/image'
+        withType: "@apostrophecms/image",
       },
       _appImageMiddle: {
-        type: 'relationship',
-        label: 'Application Image (Middle Layer)',
+        type: "relationship",
+        label: "Application Image (Middle Layer)",
         max: 1,
-        withType: '@apostrophecms/image'
+        withType: "@apostrophecms/image",
       },
       _appImageTop: {
-        type: 'relationship',
-        label: 'Application Image (Top Layer)',
+        type: "relationship",
+        label: "Application Image (Top Layer)",
         max: 1,
-        withType: '@apostrophecms/image'
+        withType: "@apostrophecms/image",
       },
       main: {
         type: "area",
@@ -77,15 +77,14 @@ export default {
             },
             "@apostrophecms/image": {},
             "@apostrophecms/video": {},
-            "button": {
-                label: "Button Widget",
-                options: {
-                    className: "bp-button-widget",
-                },
+            button: {
+              label: "Button Widget",
+              options: {
+                className: "bp-button-widget",
+              },
             },
-            "projects": {},
-            "two-column": {
-            },
+            projects: {},
+            "two-column": {},
           },
         },
       },

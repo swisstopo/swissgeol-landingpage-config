@@ -34,7 +34,7 @@ h4 {
 }
 
 p {
-  margin: 0
+  margin: 0;
 }
 
 ::selection {
@@ -74,9 +74,7 @@ pre {
   margin: 0 auto;
 }
 
-
 @media (min-width: 768px) {
-
   h1 {
     font-size: var(--sgc-typo-h1--size);
     line-height: var(--sgc-typo-h1--line-height);

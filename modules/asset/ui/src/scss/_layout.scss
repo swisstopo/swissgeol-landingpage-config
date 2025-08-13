@@ -19,20 +19,14 @@ body {
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-.bp-header {
-  padding: 16px;
-}
-
-.bp-footer {
-  padding: 40px 212px
-}
-
 .bp-header,
 .bp-footer {
   background-color: var(--sgc-color-secondary--800);
 }
 
 .bp-header {
+  padding: 16px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -40,9 +34,9 @@ body {
 }
 
 .bp-header__actions {
-    display: flex;
-    gap: 6px;
-    align-items: center;
+  display: flex;
+  gap: 6px;
+  align-items: center;
 }
 
 .bp-footer {
@@ -62,7 +56,6 @@ body {
   & .bp-footer__links__divider {
     display: none;
   }
-
 }
 
 .bp-header__logo {
@@ -92,7 +85,7 @@ body {
 
 @media (min-width: 768px) {
   .bp-header {
-    padding: 40px 212px
+    padding: 40px 212px;
   }
 
   .bp-footer {

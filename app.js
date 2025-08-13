@@ -35,33 +35,33 @@ apostrophe({
         redirectToFirstLocale: true,
         locales: {
           de: {
-            label: 'Deutsch',
-            prefix: '/de'
+            label: "Deutsch",
+            prefix: "/de",
           },
           en: {
-            label: 'English',
-            prefix: '/en'
+            label: "English",
+            prefix: "/en",
           },
           fr: {
-            label: 'Français',
-            prefix: '/fr'
+            label: "Français",
+            prefix: "/fr",
           },
           it: {
-            label: 'Italiano',
-            prefix: '/it'
-          }
-        }
+            label: "Italiano",
+            prefix: "/it",
+          },
+        },
       },
     },
-    'global-scripts': {
+    "global-scripts": {
       options: {
         scripts: [
           {
-            name: 'site',
-            when: 'always'
-          }
-        ]
-      }
+            name: "site",
+            when: "always",
+          },
+        ],
+      },
     },
     // Custom widgets
     "projects-widget": {},
@@ -70,9 +70,9 @@ apostrophe({
     "section-widget": {},
     "impressum-widget": {},
 
-    "localization": {},
+    localization: {},
     // The project's custom piece type.
-    'project': {},
+    project: {},
     // `asset` supports the project's build for client-side assets.
     asset: {},
     // use vite for asset bundling and hot module reloading

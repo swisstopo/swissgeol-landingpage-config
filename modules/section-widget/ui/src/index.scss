@@ -7,16 +7,14 @@
   flex-direction: column;
   justify-content: center;
   gap: 18px;
-
 }
 
-.section  > h2 {
+.section > h2 {
   margin-bottom: 40px;
 }
 
 @media (min-width: 768px) {
-.section  {
+  .section {
     padding-bottom: 140px;
   }
 }
-

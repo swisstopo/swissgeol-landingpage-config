@@ -12,20 +12,20 @@
   padding: 48px;
 
   &.blue {
-    background-color: #EDFBFF;
+    background-color: #edfbff;
   }
 
-    &.green {
-      background-color: #E8F0E4;
-    }
+  &.green {
+    background-color: #e8f0e4;
+  }
 
-    &.red {
-      background-color: #FFEDF0;
-    }
+  &.red {
+    background-color: #ffedf0;
+  }
 
-    &.orange {
-      background-color: #FFECE5;
-    }
+  &.orange {
+    background-color: #ffece5;
+  }
 }
 
 .hero-container__content {
@@ -46,15 +46,14 @@
   max-width: 90%;
   height: 90%;
 
-
   &.top {
     top: 0;
     left: 0;
   }
 
   &.bottom {
-      bottom: 0;
-      right: 0;
+    bottom: 0;
+    right: 0;
   }
 }
 
@@ -73,17 +72,15 @@
 
 .description-item {
   border-bottom: 1px solid var(--sgc-color-border--default);
-  padding: 24px 12px
+  padding: 24px 12px;
 }
 
 .actions {
   display: flex;
-    flex-direction: row;
-    align-items: center;
+  flex-direction: row;
+  align-items: center;
   gap: 6px;
 }
-
-
 
 @media (min-width: 768px) {
   .project {
@@ -94,4 +91,3 @@
     height: min(50vh, 50vw);
   }
 }
-

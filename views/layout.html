@@ -5,78 +5,86 @@ does not have access to an Apostrophe page or piece.') }} {% endif %} {%
 endblock %} {% block beforeMain %}
 <div class="bp-wrapper">
   <header class="bp-header">
-    <img
-      class="bp-header__logo"
-      src="/images/logo.png"
-      alt="Swissgeol logo"
-    />
+    <img class="bp-header__logo" src="/images/logo.png" alt="Swissgeol logo" />
     <nav class="bp-nav">
-        {% set currentUrl = data.page._url%}
-        {% set locale = data.locale  %}
-        <a href="/{{data.locale}}/" class="button primary transparent  {% if data.page._url == '/' ~ locale ~ '/' %} active{% endif %}">{{ __t('applications') }} </a>
-        <a href="/{{data.locale}}/wiki" class="button primary transparent  {% if currentUrl == '/' ~ locale ~ '/wiki' %} active{% endif %}">{{ __t('wiki') }}</a>
+      {% set currentUrl = data.page._url%} {% set locale = data.locale %}
+      <a
+        href="/{{data.locale}}/"
+        class="button primary transparent {% if data.page._url == '/' ~ locale ~ '/' %} active{% endif %}"
+        >{{ __t('applications') }}
+      </a>
+      <a
+        href="/{{data.locale}}/wiki"
+        class="button primary transparent {% if currentUrl == '/' ~ locale ~ '/wiki' %} active{% endif %}"
+        >{{ __t('wiki') }}</a
+      >
     </nav>
-      <div class="bp-header__actions">
-          <div class="dropdown">
-              <button class="button primary transparent " data-locales-toggle aria-expanded="false">
-                  {{data.locale | upper }}
-                  <span class="chevron-down-icon adjust-position"></span>
-              </button>
-              <ul class="dropdown-menu" data-locales hidden>
-                  {% for localization in data.localizations %}
-                  <li>
-
-                      <a href="{{ localization._url or localization.homePageUrl }}">
-                          {{ localization.label }}
-                      </a>
-
-                  </li>
-                  {% endfor %}
-              </ul>
-          </div>
+    <div class="bp-header__actions">
+      <div class="dropdown">
+        <button
+          class="button primary transparent"
+          data-locales-toggle
+          aria-expanded="false"
+        >
+          {{data.locale | upper }}
+          <span class="chevron-down-icon adjust-position"></span>
+        </button>
+        <ul class="dropdown-menu" data-locales hidden>
+          {% for localization in data.localizations %}
+          <li>
+            <a href="{{ localization._url or localization.homePageUrl }}">
+              {{ localization.label }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
       {% if not data.user %}
       <a class="button primary" href="/login">{{ __t('login') }}</a>
       {% endif %}
-      </div>
+    </div>
   </header>
   <main>
-    {% endblock %} {% block main %}  {% endblock %} {%
-    block afterMain %}
+    {% endblock %} {% block main %} {% endblock %} {% block afterMain %}
   </main>
   <footer class="bp-footer">
-      <div class="bp-footer__links">
-          <a href="mailto:swissgeol@swisstop.ch" class="button primary transparent  ">swissgeol@swisstop.ch</a>
-          <span class="bp-footer__links__divider">|</span>
-          <a href="/{{data.locale}}/impressum"  class="button primary transparent  ">{{ __t('impressum') }}</a>
-      </div>
-      <img
-              class="bp-footer__logo"
-              src="/images/swiss-federation-logo.png"
-              alt="Swiss Federation Logo"
-      />
+    <div class="bp-footer__links">
+      <a href="mailto:swissgeol@swisstop.ch" class="button primary transparent"
+        >swissgeol@swisstop.ch</a
+      >
+      <span class="bp-footer__links__divider">|</span>
+      <a href="/{{data.locale}}/impressum" class="button primary transparent"
+        >{{ __t('impressum') }}</a
+      >
+    </div>
+    <img
+      class="bp-footer__logo"
+      src="/images/swiss-federation-logo.png"
+      alt="Swiss Federation Logo"
+    />
   </footer>
 </div>
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const toggler = document.querySelector('[data-locales-toggle]');
-        const list = document.querySelector('[data-locales]');
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggler = document.querySelector("[data-locales-toggle]");
+    const list = document.querySelector("[data-locales]");
 
-        if (toggler && list) {
-            toggler.addEventListener('click', () => {
-                console.log("yoyooy")
+    if (toggler && list) {
+      toggler.addEventListener("click", () => {
+        console.log("yoyooy");
 
-                const isExpanded = toggler.getAttribute('aria-expanded') === 'true';
-                toggler.setAttribute('aria-expanded', String(!isExpanded));
-                list.hidden = isExpanded;
-            });
+        const isExpanded = toggler.getAttribute("aria-expanded") === "true";
+        toggler.setAttribute("aria-expanded", String(!isExpanded));
+        list.hidden = isExpanded;
+      });
 
-            document.addEventListener('click', (event) => {
-                if (!toggler.contains(event.target) && !list.contains(event.target)) {
-                    toggler.setAttribute('aria-expanded', 'false');
-                    list.hidden = true;
-                }
-            })
+      document.addEventListener("click", (event) => {
+        if (!toggler.contains(event.target) && !list.contains(event.target)) {
+          toggler.setAttribute("aria-expanded", "false");
+          list.hidden = true;
         }
-    });
+      });
+    }
+  });
 </script>
 {% endblock %}

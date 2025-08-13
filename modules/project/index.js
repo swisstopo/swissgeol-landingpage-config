@@ -1,76 +1,76 @@
 export default {
-  extend: '@apostrophecms/piece-type',
+  extend: "@apostrophecms/piece-type",
   options: {
-    label: 'Project',
+    label: "Project",
   },
   fields: {
     add: {
       image: {
-        label: 'Logo Image',
-        type: 'area',
+        label: "Logo Image",
+        type: "area",
         options: {
           max: 1,
           widgets: {
-            '@apostrophecms/image': {}
-          }
-        }
+            "@apostrophecms/image": {},
+          },
+        },
       },
       backgroundColor: {
-        type: 'select',
-        label: 'Background Color Class',
+        type: "select",
+        label: "Background Color Class",
         choices: [
           {
-            label: 'Blue (Assets)',
-            value: 'blue'
+            label: "Blue (Assets)",
+            value: "blue",
           },
           {
-            label: 'Green (Viewer)',
-            value: 'green'
+            label: "Green (Viewer)",
+            value: "green",
           },
           {
-            label: 'Red (Boreholes)',
-            value: 'red'
+            label: "Red (Boreholes)",
+            value: "red",
           },
           {
-            label: 'Orange (Raw MAterials',
-            value: 'orange'
+            label: "Orange (Raw MAterials",
+            value: "orange",
           },
         ],
       },
       mainUrl: {
-        type: 'url',
-        label: 'Project URL',
-        required: true
+        type: "url",
+        label: "Project URL",
+        required: true,
       },
       additionalUrls: {
-        type: 'array',
-        label: 'Additional URLs',
+        type: "array",
+        label: "Additional URLs",
         fields: {
           add: {
             label: {
-              type: 'string',
-              label: 'Label'
+              type: "string",
+              label: "Label",
             },
             url: {
-              type: 'url',
-              label: 'URL'
-            }
-          }
-        }
+              type: "url",
+              label: "URL",
+            },
+          },
+        },
       },
       descriptionItems: {
-        type: 'array',
-        label: 'Description Items',
-        titleField: 'text',
+        type: "array",
+        label: "Description Items",
+        titleField: "text",
         fields: {
           add: {
             label: {
-              type: 'string',
-              label: 'Text'
+              type: "string",
+              label: "Text",
             },
-          }
-        }
-      },
+          },
+        },
       },
     },
+  },
 };

@@ -1,7 +1,7 @@
 export default {
-  extend: '@apostrophecms/widget-type',
+  extend: "@apostrophecms/widget-type",
   options: {
-    label: 'Section Widget',
+    label: "Section Widget",
   },
   fields: {
     add: {
@@ -37,7 +37,8 @@ export default {
                 {
                   tag: "h2",
                   label: "Heading 2 (H2)",
-                }, {
+                },
+                {
                   tag: "h3",
                   label: "Heading 3 (H3)",
                 },
@@ -49,8 +50,8 @@ export default {
               insert: ["table", "importTable", "image"],
             },
             "@apostrophecms/image": {},
-            "file": {},
-            "impressum": {}
+            file: {},
+            impressum: {},
           },
         },
       },
