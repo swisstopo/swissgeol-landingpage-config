@@ -124,22 +124,22 @@
   .layer-base {
     left: 0;
     top: 500px;
-    width: 836px;
-    height: 592px;
+    width: 80vw;
+    height: 65vh;
   }
 
   .layer-middle {
     left: 5vw;
     z-index: 3;
     top: 350px;
-    width: 1496px;
-    height: 904px;
+    width: 85vw;
+    height: 80vh;
   }
 
   .layer-top {
     right: 48px;
     top: 90px;
-    width: 576px;
-    height: 965px;
+    width: 36vw;
+    height: 90vh;
   }
 }

@@ -9,14 +9,20 @@
 
 
         {% set imageUrl = apos.attachment.url(images[0]) %}
-        <img src="{{ imageUrl }}" alt="{{ altText }}" class="image-single">
+        <div class="image-single">
+            <img src="{{ imageUrl }}" alt="{{ altText }}" >
+        </div>
         {% else %}
 
         {% set imageUrl1 = apos.attachment.url(images[0]) %}
-        <img src="{{ imageUrl1 }}" alt="{{ altText }}" class="image-double top">
+        <div class="image-double top">
+            <img src="{{ imageUrl1 }}" alt="{{ altText }}" >
+        </div>
 
         {% set imageUrl2 = apos.attachment.url(images[1]) %}
-        <img src="{{ imageUrl2 }}" alt="{{ altText }}" class="image-double bottom">
+        <div class="image-double bottom">
+            <img src="{{ imageUrl2 }}" alt="{{ altText }}" >
+        </div>
         {% endif %}
     </div>
 </div>
@@ -43,7 +49,7 @@
         {% elif project.additionalUrls and project.additionalUrls|length > 1 %}
         <div class="dropdown">
             <button class="button secondary" dropdown-toggle aria-expanded="false">
-                Select a link
+                {{ __t('more') }}
                 <span class="arrow">&#9662;</span>
             </button>
             <ul class="dropdown-menu" dropdown-content hidden>
