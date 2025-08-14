@@ -1,4 +1,5 @@
 export default () => {
+  // eslint-disable-next-line no-undef
   apos.util.widgetPlayers.projects = {
     selector: "[data-projects]",
     player: function (widget) {
