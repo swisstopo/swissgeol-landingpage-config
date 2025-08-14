@@ -1,0 +1,67 @@
+{% set project = data.widget._selectedProject[0] %} {% set images =
+apos.attachment.all(data.widget._images) %} {% if project %}
+
+<div class="project">
+  <div class="hero-container {{project.backgroundColor}}">
+    <div class="hero-container__content">
+      {% if images.length == 1 %} {% set imageUrl =
+      apos.attachment.url(images[0]) %}
+      <div class="image-single">
+        <img src="{{ imageUrl }}" alt="{{ altText }}" />
+      </div>
+      {% else %} {% set imageUrl1 = apos.attachment.url(images[0]) %}
+      <div class="image-double top">
+        <img src="{{ imageUrl1 }}" alt="{{ altText }}" />
+      </div>
+
+      {% set imageUrl2 = apos.attachment.url(images[1]) %}
+      <div class="image-double bottom">
+        <img src="{{ imageUrl2 }}" alt="{{ altText }}" />
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  {% set image = apos.image.first(project.image) %} {% if image %} {% set
+  imageUrl = apos.attachment.url(image) %}
+  <div class="review col-md-4">
+    <div class="review__image">
+      <img src="{{ imageUrl }}" alt="{{ altText }}" />
+    </div>
+  </div>
+  {% endif %}
+  <div class="description-items">
+    {% for item in project.descriptionItems %}
+    <span class="description-item">{{ item.label }}</span>
+    {% endfor %}
+  </div>
+  <div class="actions" data-projects>
+    <a href="{{project.mainUrl}}" class="button primary"
+      >{{project.title}} <span class="arrow-ne-icon"></span
+    ></a>
+    {% if project.additionalUrls and project.additionalUrls|length == 1 %}
+    <a href="{{project.additionalUrls[0].url}}" class="button secondary"
+      >{{project.additionalUrls[0].label}}
+      <span class="arrow-ne-icon icon-primary"></span
+    ></a>
+    {% elif project.additionalUrls and project.additionalUrls|length > 1 %}
+    <div class="dropdown">
+      <button class="button secondary" dropdown-toggle aria-expanded="false">
+        {{ __t('more') }}
+        <span class="chevron-down-icon icon-secondary"></span>
+      </button>
+      <ul class="dropdown-menu" dropdown-content hidden>
+        {% for urlItem in project.additionalUrls %}
+        <li>
+          <a href="{{ urlItem.url }}"
+            >{{ urlItem.label or 'Link ' ~ loop.index }}</a
+          >
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    {% endif %}
+  </div>
+  {% endif %}
+</div>

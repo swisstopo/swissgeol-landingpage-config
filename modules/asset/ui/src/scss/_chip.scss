@@ -1,0 +1,16 @@
+.chip {
+  background-color: var(--sgc-color-secondary--50);
+  border-radius: 22px;
+  height: 28px;
+  padding: 6px 8px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: var(--sgc-color-secondary--800);
+  font-size: var(--sgc-typo-overline--size);
+  line-height: var(--sgc-typo-overline--line-height);
+  font-weight: var(--sgc-typo-overline--weight);
+  font-family: "Inter", sans-serif;
+}

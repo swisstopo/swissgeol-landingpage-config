@@ -1,0 +1,11 @@
+.two-column-widget {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .two-column-widget {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2vw;
+  }
+}

@@ -29,6 +29,50 @@ apostrophe({
         className: "bp-video-widget",
       },
     },
+    "@apostrophecms/i18n": {
+      options: {
+        defaultLocale: "de",
+        redirectToFirstLocale: true,
+        locales: {
+          de: {
+            label: "Deutsch",
+            prefix: "/de",
+          },
+          en: {
+            label: "English",
+            prefix: "/en",
+          },
+          fr: {
+            label: "Français",
+            prefix: "/fr",
+          },
+          it: {
+            label: "Italiano",
+            prefix: "/it",
+          },
+        },
+      },
+    },
+    "global-scripts": {
+      options: {
+        scripts: [
+          {
+            name: "site",
+            when: "always",
+          },
+        ],
+      },
+    },
+    // Custom widgets
+    "projects-widget": {},
+    "two-column-widget": {},
+    "file-widget": {},
+    "section-widget": {},
+    "impressum-widget": {},
+
+    localization: {},
+    // The project's custom piece type.
+    project: {},
     // `asset` supports the project's build for client-side assets.
     asset: {},
     // use vite for asset bundling and hot module reloading

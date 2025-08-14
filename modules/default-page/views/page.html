@@ -1,8 +1,64 @@
 {# This is an example home page template. It inherits and extends a layout
 template that lives in the top-level views/ folder for convenience #} {% extends
 "layout.html" %} {% block main %}
-<section class="bp-content">
-  <h1>{{ data.page.title }}</h1>
-  {% area data.page, 'main' %}
-</section>
+<div class="page-header">
+  <div class="header-content">
+    <h1>{{ data.page.title }}</h1>
+    <span>{{data.page.description}}</span>
+  </div>
+</div>
+<div class="nav-mobile" data-projects>
+  <a dropdown-toggle aria-expanded="false"> </a>
+  <ul class="nav-mobile__menu" dropdown-content hidden>
+    {% for widget in data.page.main.items %}
+    <li><a href="#{{ widget.title }}">{{ widget.title }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+<div class="content">
+  <section>{% area data.page, 'main' %}</section>
+  <nav class="section-nav">
+    <ul>
+      {% for widget in data.page.main.items %}
+      <li>
+        <a href="#{{ widget.title }}"> {{ widget.title }} </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+</div>
+<script>
+  function onScroll() {
+    const sections = document.querySelectorAll("section h2[id]");
+    const navLinksDesktop = document.querySelectorAll(".section-nav a");
+    const toggleLabel = document.querySelector("[dropdown-toggle]");
+    let scrollPosition = window.scrollY; // adjust for sticky header
+
+    sections.forEach((section) => {
+      if (
+        section.offsetTop <= scrollPosition &&
+        section.offsetTop + section.offsetHeight > scrollPosition
+      ) {
+        const id = section.getAttribute("id");
+        navLinksDesktop.forEach((link) => {
+          link.classList.toggle(
+            "active",
+            link.getAttribute("href") === `#${id}`,
+          );
+        });
+        console.log(section.textContent.trim());
+        if (toggleLabel.innerText !== section.textContent.trim()) {
+          toggleLabel.innerText = section.textContent.trim();
+        }
+      }
+    });
+  }
+
+  window.addEventListener("scroll", onScroll);
+  onScroll(); // run on load
+  const toggleLabel = document.querySelector("[dropdown-toggle]");
+  const sections = document.querySelectorAll("section h2[id]");
+  toggleLabel.innerText = sections[0].textContent.trim();
+</script>
+
 {% endblock %}

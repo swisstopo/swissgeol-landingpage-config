@@ -1,0 +1,20 @@
+.file-widget {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px 16px 12px;
+  height: 46px;
+  border-bottom: 1px solid var(--sgc-color-border--default);
+}
+
+a {
+  text-decoration: none;
+  color: var(--sgc-color-primary);
+}
+
+@media (min-width: 768px) {
+  .file-widget {
+    justify-content: flex-start;
+  }
+}
