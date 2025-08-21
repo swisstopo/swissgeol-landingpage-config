@@ -2,6 +2,11 @@
   display: block;
 }
 
+.column-item .apos-area {
+  display: flex;
+  justify-content: center;
+}
+
 @media (min-width: 768px) {
   .two-column-widget {
     display: grid;

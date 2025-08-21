@@ -63,6 +63,7 @@ export default {
         type: "array",
         label: "Description Items",
         titleField: "text",
+        max: 3,
         fields: {
           add: {
             label: {

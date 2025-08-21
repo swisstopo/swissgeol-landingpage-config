@@ -24,7 +24,7 @@ apos.attachment.all(data.widget._images) %} {% if project %}
 
   {% set image = apos.image.first(project.image) %} {% if image %} {% set
   imageUrl = apos.attachment.url(image) %}
-  <div class="review col-md-4">
+  <div >
     <div class="review__image">
       <img src="{{ imageUrl }}" alt="{{ altText }}" />
     </div>
