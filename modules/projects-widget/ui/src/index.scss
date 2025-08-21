@@ -64,6 +64,10 @@
   object-fit: cover;
 }
 
+.review__image img {
+  height: 58px;
+}
+
 .description-items {
   display: flex;
   flex-direction: column;
