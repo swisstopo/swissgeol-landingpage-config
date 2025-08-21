@@ -14,6 +14,7 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  margin-bottom: 20px;
 }
 
 .hero__text {
@@ -30,10 +31,14 @@
   text-align: left;
 }
 
+.hero-images__container {
+  position: relative;
+}
+
 .layer-base {
   position: absolute;
   left: 0;
-  top: 500px;
+  top: 200px;
   width: 281px;
   height: 228px;
   overflow: hidden;
@@ -43,7 +48,7 @@
   position: absolute;
   left: 5vw;
   z-index: 3;
-  top: 350px;
+  top: 50px;
   width: 474px;
   height: 359px;
   overflow: hidden;
@@ -52,9 +57,9 @@
 .layer-top {
   position: absolute;
   right: 0;
-  top: 300px;
+  top: 0;
   width: 280px;
-  height: 227px;
+  height: 277px;
   overflow: hidden;
 }
 
@@ -66,8 +71,8 @@
 
 @media (min-width: 768px) {
   .hero {
-    padding: 90px 10vw;
-    height: 900px;
+    padding: 90px 124px 90px 10vw;
+    height: 800px;
 
     .hero__content {
       gap: 36px;
@@ -85,12 +90,12 @@
   }
 
   .apps {
-    padding: 350px 10vw 0 10vw;
+    padding: 500px 10vw 0 10vw;
   }
 
   .layer-base {
     left: 0;
-    top: 600px;
+    top: 200px;
     width: 80vw;
     height: 55vh;
   }
@@ -98,39 +103,43 @@
   .layer-middle {
     left: 5vw;
     z-index: 3;
-    top: 470px;
+    top: 70px;
     width: 90vw;
     height: 70vh;
   }
 
   .layer-top {
-    right: 0;
-    top: 380px;
+    right: -80px;
+    top: -50px;
     width: 60vw;
     height: 60vh;
   }
 }
 
 @media (min-width: 1590px) {
+  .hero {
+    height: 1100px;
+  }
+
   .layer-base {
-    left: 0;
-    top: 500px;
+    left: -150px;
+    top: 300px;
     width: 80vw;
-    height: 65vh;
+    height: min(65vh, 1000px);
   }
 
   .layer-middle {
-    left: 5vw;
+    left: -25px;
     z-index: 3;
-    top: 350px;
-    width: 85vw;
-    height: 80vh;
+    top: 0;
+    width: 75vw;
+    height: min(80vh, 1200px);
   }
 
   .layer-top {
-    right: 48px;
-    top: 90px;
-    width: 36vw;
-    height: 90vh;
+    right: 0;
+    top: -350px;
+    width: 30vw;
+    height: min(90vh, 1400px);
   }
 }
