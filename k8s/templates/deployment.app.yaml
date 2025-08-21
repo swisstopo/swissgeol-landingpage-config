@@ -29,7 +29,7 @@ spec:
             - containerPort: 3000
           volumeMounts:
             - name: {{ .Release.Name }}-uploads-volume
-              mountPath: /app/uploads
+              mountPath: /app/public/uploads
 
           readinessProbe:
             httpGet:
