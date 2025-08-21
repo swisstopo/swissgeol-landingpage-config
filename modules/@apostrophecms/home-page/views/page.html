@@ -10,27 +10,37 @@
         <span class="arrow-down-icon"></span>
       </a>
       {% endif %}
-    </div >
-      <div class="hero-images__container">
-          {% set baseImg = apos.image.first(data.page._appImageBase) %} {% if baseImg
-          %} {% set imageUrl = apos.attachment.url(baseImg) %}
-          <div class="layer-base">
-              <img class="overlapping-image" src="{{ imageUrl }}" alt="{{ altText }}" />
-          </div>
-          {% endif %} {% set middleImg = apos.image.first(data.page._appImageMiddle)
-          %} {% if middleImg %} {% set imageUrl = apos.attachment.url(middleImg) %}
-          <div class="layer-middle">
-              <img class="overlapping-image" src="{{ imageUrl }}" alt="{{ altText }}" />
-          </div>
-          {% endif %} {% set topImg = apos.image.first(data.page._appImageTop) %} {%
-          if topImg %} {% set imageUrl = apos.attachment.url(topImg) %}
-          <div class="layer-top">
-              <img class="overlapping-image" src="{{ imageUrl }}" alt="{{ altText }}" />
-          </div>
-          {% endif %}
+    </div>
+    <div class="hero-images__container">
+      {% set baseImg = apos.image.first(data.page._appImageBase) %} {% if
+      baseImg %} {% set imageUrl = apos.attachment.url(baseImg) %}
+      <div class="layer-base">
+        <img
+          class="overlapping-image"
+          src="{{ imageUrl }}"
+          alt="{{ altText }}"
+        />
       </div>
-
-
+      {% endif %} {% set middleImg = apos.image.first(data.page._appImageMiddle)
+      %} {% if middleImg %} {% set imageUrl = apos.attachment.url(middleImg) %}
+      <div class="layer-middle">
+        <img
+          class="overlapping-image"
+          src="{{ imageUrl }}"
+          alt="{{ altText }}"
+        />
+      </div>
+      {% endif %} {% set topImg = apos.image.first(data.page._appImageTop) %} {%
+      if topImg %} {% set imageUrl = apos.attachment.url(topImg) %}
+      <div class="layer-top">
+        <img
+          class="overlapping-image"
+          src="{{ imageUrl }}"
+          alt="{{ altText }}"
+        />
+      </div>
+      {% endif %}
+    </div>
   </div>
   <div class="apps" id="main">{% area data.page, 'main' %}</div>
 </div>
