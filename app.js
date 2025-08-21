@@ -53,6 +53,7 @@ apostrophe({
         },
       },
     },
+    "@apostrophecms/favicon": {},
     "global-scripts": {
       options: {
         scripts: [
