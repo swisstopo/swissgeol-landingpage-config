@@ -18,10 +18,6 @@ export default {
         type: "string",
         label: "Button Label",
       },
-      heroButtonLink: {
-        type: "url",
-        label: "Button Link",
-      },
       _appImageBase: {
         type: "relationship",
         label: "Application Image (Bottom Layer)",

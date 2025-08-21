@@ -8,6 +8,7 @@ export default {
       image: {
         label: "Logo Image",
         type: "area",
+        help: "This is the logo. Its displayed height is 58px.",
         options: {
           max: 1,
           widgets: {
@@ -62,6 +63,7 @@ export default {
         type: "array",
         label: "Description Items",
         titleField: "text",
+        max: 3,
         fields: {
           add: {
             label: {
