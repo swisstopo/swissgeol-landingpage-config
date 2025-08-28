@@ -36,11 +36,11 @@ apos.attachment.all(data.widget._images) %} {% if project %}
     {% endfor %}
   </div>
   <div class="actions" data-projects>
-    <a href="{{project.mainUrl}}" class="button primary"
+    <a href="{{project.mainUrl}}" target="_blank" class="button primary"
       >{{project.title}} <span class="arrow-ne-icon"></span
     ></a>
     {% if project.additionalUrls and project.additionalUrls|length == 1 %}
-    <a href="{{project.additionalUrls[0].url}}" class="button secondary"
+    <a href="{{project.additionalUrls[0].url}}" target="_blank" class="button secondary"
       >{{project.additionalUrls[0].label}}
       <span class="arrow-ne-icon icon-primary"></span
     ></a>
@@ -53,7 +53,7 @@ apos.attachment.all(data.widget._images) %} {% if project %}
       <ul class="dropdown-menu" dropdown-content hidden>
         {% for urlItem in project.additionalUrls %}
         <li>
-          <a href="{{ urlItem.url }}"
+          <a href="{{ urlItem.url }}" target="_blank"
             >{{ urlItem.label or 'Link ' ~ loop.index }}</a
           >
         </li>
