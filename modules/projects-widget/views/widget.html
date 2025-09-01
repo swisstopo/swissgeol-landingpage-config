@@ -40,7 +40,10 @@ apos.attachment.all(data.widget._images) %} {% if project %}
       >{{project.title}} <span class="arrow-ne-icon"></span
     ></a>
     {% if project.additionalUrls and project.additionalUrls|length == 1 %}
-    <a href="{{project.additionalUrls[0].url}}" target="_blank" class="button secondary"
+    <a
+      href="{{project.additionalUrls[0].url}}"
+      target="_blank"
+      class="button secondary"
       >{{project.additionalUrls[0].label}}
       <span class="arrow-ne-icon icon-primary"></span
     ></a>
