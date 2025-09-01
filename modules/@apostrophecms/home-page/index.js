@@ -4,6 +4,38 @@ export default {
   },
   fields: {
     add: {
+      title: {
+        type: "string",
+        label: "Title",
+        required: true,
+      },
+      text: {
+        type: "string",
+        label: "Text",
+        required: true,
+      },
+      heroButtonLabel: {
+        type: "string",
+        label: "Button Label",
+      },
+      _appImageBase: {
+        type: "relationship",
+        label: "Application Image (Bottom Layer)",
+        max: 1,
+        withType: "@apostrophecms/image",
+      },
+      _appImageMiddle: {
+        type: "relationship",
+        label: "Application Image (Middle Layer)",
+        max: 1,
+        withType: "@apostrophecms/image",
+      },
+      _appImageTop: {
+        type: "relationship",
+        label: "Application Image (Top Layer)",
+        max: 1,
+        withType: "@apostrophecms/image",
+      },
       main: {
         type: "area",
         options: {
@@ -41,6 +73,14 @@ export default {
             },
             "@apostrophecms/image": {},
             "@apostrophecms/video": {},
+            button: {
+              label: "Button Widget",
+              options: {
+                className: "bp-button-widget",
+              },
+            },
+            projects: {},
+            "two-column": {},
           },
         },
       },

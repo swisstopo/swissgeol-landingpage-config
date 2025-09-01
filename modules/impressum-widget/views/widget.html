@@ -1,0 +1,6 @@
+<div class="impressum-content">
+  {% set baseImg = apos.image.first(data.widget._image) %} {% if baseImg %} {%
+  set imageUrl = apos.attachment.url(baseImg) %}
+  <img src="{{ imageUrl }}" alt="{{ altText }}" />
+  {% endif %} {% area data.widget, 'main' %}
+</div>

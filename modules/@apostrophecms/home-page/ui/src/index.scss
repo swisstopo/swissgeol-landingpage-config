@@ -1,0 +1,145 @@
+.apps {
+  padding: 260px 16px 0 16px;
+}
+
+.hero {
+  padding: 60px 16px 0 16px;
+  background-color: var(--sgc-color-secondary--800);
+  position: relative;
+  height: 450px;
+  overflow-x: clip;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.hero__text {
+  max-width: 720px;
+  color: white;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.05px;
+}
+
+.hero h1 {
+  color: white;
+  text-align: left;
+}
+
+.hero-images__container {
+  position: relative;
+}
+
+.layer-base {
+  position: absolute;
+  left: 0;
+  top: 200px;
+  width: 281px;
+  height: 228px;
+  overflow: hidden;
+}
+
+.layer-middle {
+  position: absolute;
+  left: 5vw;
+  z-index: 3;
+  top: 50px;
+  width: 474px;
+  height: 359px;
+  overflow: hidden;
+}
+
+.layer-top {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 280px;
+  height: 277px;
+  overflow: hidden;
+}
+
+.overlapping-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 90px 124px 90px 10vw;
+    height: 800px;
+
+    .hero__content {
+      gap: 36px;
+      margin-bottom: 100px;
+    }
+
+    h1 {
+      line-height: 82px;
+    }
+
+    .hero__text {
+      font-size: 22px;
+      line-height: 29px;
+    }
+  }
+
+  .apps {
+    padding: 500px 10vw 0 10vw;
+  }
+
+  .layer-base {
+    left: 0;
+    top: 200px;
+    width: 80vw;
+    height: 55vh;
+  }
+
+  .layer-middle {
+    left: 5vw;
+    z-index: 3;
+    top: 70px;
+    width: 90vw;
+    height: 70vh;
+  }
+
+  .layer-top {
+    right: -80px;
+    top: -50px;
+    width: 60vw;
+    height: 60vh;
+  }
+}
+
+@media (min-width: 1590px) {
+  .hero {
+    height: 1100px;
+  }
+
+  .layer-base {
+    left: -150px;
+    top: 300px;
+    width: 80vw;
+    height: min(65vh, 1000px);
+  }
+
+  .layer-middle {
+    left: -25px;
+    z-index: 3;
+    top: 0;
+    width: 75vw;
+    height: min(80vh, 1200px);
+  }
+
+  .layer-top {
+    right: 0;
+    top: -350px;
+    width: 30vw;
+    height: min(90vh, 1400px);
+  }
+}

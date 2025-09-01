@@ -8,7 +8,7 @@ docker:
   db_image:
 
 database:
-  host:
+  user:
   port:
   name:
-  user:
+

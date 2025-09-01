@@ -1,49 +1,96 @@
-{# Automatically extends the right outer layout and also handles AJAX siutations
-#} {% extends data.outerLayout %} {% set title = data.piece.title or
+{% extends data.outerLayout %} {% set title = data.piece.title or
 data.page.title %} {% block title %} {{ title }} {% if not title %} {{
 apos.log('Looks like you forgot to override the title block in a template that
 does not have access to an Apostrophe page or piece.') }} {% endif %} {%
 endblock %} {% block beforeMain %}
 <div class="bp-wrapper">
   <header class="bp-header">
-    <img
-      class="bp-header__logo"
-      src="/images/logo.png"
-      alt="ApostropheCMS logo"
-    />
-    <nav class="bp-nav"></nav>
-    {% if not data.user %}
-    <a class="bp-button bp-header__login" href="/login">Login</a>
-    {% endif %}
+    <a href="/{{data.locale}}/">
+      <img
+        class="bp-header__logo"
+        src="/images/logo.png"
+        alt="Swissgeol logo"
+      />
+    </a>
+    <nav class="bp-nav">
+      {% set currentUrl = data.page._url%} {% set locale = data.locale %}
+      <a
+        href="/{{data.locale}}/"
+        class="button primary transparent {% if data.page._url == '/' ~ locale ~ '/' %} active{% endif %}"
+        >{{ __t('applications') }}
+      </a>
+      <a
+        href="/{{data.locale}}/wiki"
+        class="button primary transparent {% if currentUrl == '/' ~ locale ~ '/wiki' %} active{% endif %}"
+        >{{ __t('wiki') }}</a
+      >
+    </nav>
+    <div class="bp-header__actions">
+      <div class="dropdown">
+        <button
+          class="button primary transparent"
+          data-locales-toggle
+          aria-expanded="false"
+        >
+          {{data.locale | upper }}
+          <span class="chevron-down-icon adjust-position"></span>
+        </button>
+        <ul class="dropdown-menu" data-locales hidden>
+          {% for localization in data.localizations %}
+          <li>
+            <a href="{{ localization._url or localization.homePageUrl }}">
+              {{ localization.label }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% if not data.user %}
+      <a class="button primary" href="/login">{{ __t('login') }}</a>
+      {% endif %}
+    </div>
   </header>
-  <main class="bp-main">
-    {% endblock %} {% block main %} {# Usually, your page templates in the
-    @apostrophecms/pages module will override this block. It is safe to assume
-    this is where your page-specific content should go. #} {% endblock %} {%
-    block afterMain %}
+  <main>
+    {% endblock %} {% block main %} {% endblock %} {% block afterMain %}
   </main>
   <footer class="bp-footer">
-    <h3>Essential Links</h3>
-    <ul class="bp-footer__links">
-      <li>
-        <a href="https://apostrophecms.com/" target="_blank"
-          >About ApostropheCMS</a
-        >
-      </li>
-      <li>
-        <a href="https://chat.apostrophecms.com/" target="_blank">Discord</a>
-      </li>
-      <li>
-        <a href="https://twitter.com/apostrophecms" target="_blank">Twitter</a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/apostrophecms/apostrophe/discussions"
-          target="_blank"
-          >GitHub Discussions</a
-        >
-      </li>
-    </ul>
+    <div class="bp-footer__links">
+      <a href="mailto:swissgeol@swisstop.ch" class="button primary transparent"
+        >swissgeol@swisstop.ch</a
+      >
+      <span class="bp-footer__links__divider">|</span>
+      <a href="/{{data.locale}}/impressum" class="button primary transparent"
+        >{{ __t('impressum') }}</a
+      >
+    </div>
+    <img
+      class="bp-footer__logo"
+      src="/images/swiss-federation-logo.png"
+      alt="Swiss Federation Logo"
+    />
   </footer>
 </div>
-{# Close .bp-wrapper #} {% endblock %}
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const toggler = document.querySelector("[data-locales-toggle]");
+    const list = document.querySelector("[data-locales]");
+
+    if (toggler && list) {
+      toggler.addEventListener("click", () => {
+        console.log("yoyooy");
+
+        const isExpanded = toggler.getAttribute("aria-expanded") === "true";
+        toggler.setAttribute("aria-expanded", String(!isExpanded));
+        list.hidden = isExpanded;
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!toggler.contains(event.target) && !list.contains(event.target)) {
+          toggler.setAttribute("aria-expanded", "false");
+          list.hidden = true;
+        }
+      });
+    }
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,136 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.page-header {
+  background-color: var(--sgc-color-secondary--800);
+  color: var(--sgc-color-bg--white);
+}
+
+.header-content {
+  padding: 60px 16px 40px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.content {
+  padding: 64px 16px 0 16px;
+  display: flex;
+  gap: 64px;
+}
+
+.content > .apos-area {
+  display: flex;
+  flex-direction: column;
+  gap: 140px;
+}
+
+.section-nav {
+  position: sticky;
+  top: min(450px, 30vh);
+  height: fit-content;
+  min-width: 200px;
+  max-width: 220px;
+  display: none;
+}
+
+.section-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.section-nav li {
+  height: 40px;
+  align-content: center;
+  margin-bottom: -3px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.section-nav a {
+  text-decoration: none;
+  color: var(--sgc-color-secondary--800);
+  border-left: 1px solid var(--sgc-color-border--default);
+  padding: 8px 36px;
+}
+
+.section-nav a.active {
+  position: relative;
+  z-index: 1;
+  font-weight: bold;
+  color: var(--sgc-color-primary);
+  border-left: 3px solid var(--sgc-color-primary);
+}
+
+.section-nav a:hover {
+  text-decoration: underline;
+}
+
+.nav-mobile {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  border-bottom: 1px solid var(--sgc-color-border--default);
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--sgc-color-secondary--800);
+  position: sticky;
+  top: 0;
+  background-color: white;
+
+  a {
+    display: block;
+    width: 100%;
+    color: var(--sgc-color-secondary--800);
+  }
+}
+
+.nav-mobile__menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  border: 1px solid var(--sgc-color-border--default);
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--sgc-color-bg--white);
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+    padding: 8px 12px 8px 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .header-content {
+    max-width: 60vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 90px 10vw;
+  }
+
+  .content {
+    max-width: 60vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 124px;
+    gap: 64px;
+  }
+
+  .section-nav {
+    display: block;
+  }
+
+  .nav-mobile {
+    display: none;
+  }
+}

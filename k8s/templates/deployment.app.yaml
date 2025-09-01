@@ -17,12 +17,19 @@ spec:
       labels:
         app: {{ .Release.Name }}-app
     spec:
+      volumes:
+        - name: {{ .Release.Name }}-uploads-volume
+          persistentVolumeClaim:
+            claimName: {{ .Release.Name }}-uploads-claim
       containers:
         - name: {{ .Release.Name }}-app
           image: {{ .Values.docker.app_image }}
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
+          volumeMounts:
+            - name: {{ .Release.Name }}-uploads-volume
+              mountPath: /app/public/uploads
 
           readinessProbe:
             httpGet:
@@ -39,23 +46,14 @@ spec:
               value: '3000'
             - name: ENV
               value: {{ .Values.env }}
-
-            # Database
-            - name: PGHOST
-              value: "{{ .Values.database.host }}"
-            - name: PGPORT
-              value: "{{ .Values.database.port }}"
-            - name: PGDATABASE
-              value: "{{ .Values.database.name }}"
-            - name: PGUSER
-              value: "{{ .Values.database.user }}"
-            - name: PG_SSL_MODE
-              value: 'require'
-            - name: PGPASSWORD
+            - name: APOS_MONGODB_URI
               valueFrom:
                 secretKeyRef:
                   name: {{ .Release.Name }}-secrets
-                  key: database_password
+                  key: mongodb_uri
+
+
+
 
       imagePullSecrets:
         - name: {{ .Release.Namespace }}-registry
