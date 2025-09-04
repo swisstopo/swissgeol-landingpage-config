@@ -1,28 +1,27 @@
-{% set files = apos.attachment.all(data.widget._files) %} {% for file in files
-%}
+{% for file in data.widget._files %}
 <div>
-  {% if file.extension == 'pdf' %}
-
+  {% set href = file._url or apos.attachment.url(file.attachment) %} {% set ext
+  = file.attachment.extension %} {% if ext == 'pdf' %}
   <a
     class="file-widget"
-    href="{{ apos.attachment.url(file) }}"
+    href="{{ href }}"
     target="_blank"
     rel="noopener noreferrer"
   >
     <span class="link-icon"></span>
-    <span>{{file.title}}</span>
+    <span>{{ file.title }}</span>
     <div class="chip">
       <span class="document-icon"></span>
-      <span>{{file.extension | upper }}</span>
+      <span>{{ ext | upper }}</span>
     </div>
   </a>
   {% else %}
-  <a class="file-widget" href="{{ apos.attachment.url(file) }}" download>
+  <a class="file-widget" href="{{ href }}" download>
     <span class="download-icon"></span>
-    <span>{{file.title}}</span>
+    <span>{{ file.title }}</span>
     <div class="chip">
       <span class="document-icon"></span>
-      <span>{{file.extension | upper }}</span>
+      <span>{{ ext | upper }}</span>
     </div>
   </a>
   {% endif %}
