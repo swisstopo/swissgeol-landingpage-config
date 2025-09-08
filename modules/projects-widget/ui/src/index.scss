@@ -46,6 +46,8 @@
   position: absolute;
   width: 70%;
   height: 70%;
+  display: flex;
+  justify-content: start;
 
   &.top {
     top: 0;
@@ -55,6 +57,7 @@
   &.bottom {
     bottom: 0;
     right: 0;
+    justify-content: end;
 
     img {
       position: absolute;
