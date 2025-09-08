@@ -11,7 +11,8 @@
     </div>
     <div class="hero-images__container">
       {% set baseImg = apos.image.first(data.page._appImageBase) %} {% if
-      baseImg %} {% set imageUrl = apos.attachment.url(baseImg) %}
+      baseImg %} {% set imageUrl = apos.attachment.url(baseImg, { size:
+      'original' }) %}
       <div class="layer-base">
         <img
           class="overlapping-image"
@@ -20,7 +21,8 @@
         />
       </div>
       {% endif %} {% set middleImg = apos.image.first(data.page._appImageMiddle)
-      %} {% if middleImg %} {% set imageUrl = apos.attachment.url(middleImg) %}
+      %} {% if middleImg %} {% set imageUrl = apos.attachment.url(middleImg, {
+      size: 'original' }) %}
       <div class="layer-middle">
         <img
           class="overlapping-image"
@@ -29,7 +31,8 @@
         />
       </div>
       {% endif %} {% set topImg = apos.image.first(data.page._appImageTop) %} {%
-      if topImg %} {% set imageUrl = apos.attachment.url(topImg) %}
+      if topImg %} {% set imageUrl = apos.attachment.url(topImg, { size:
+      'original' }) %}
       <div class="layer-top">
         <img
           class="overlapping-image"
