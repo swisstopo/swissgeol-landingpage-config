@@ -9,7 +9,7 @@
 .hero-container {
   box-sizing: border-box;
   width: 100%;
-  height: min(348px, 60vw);
+  height: 60vw;
   padding: 12px;
 
   &.blue {
@@ -101,7 +101,7 @@
     gap: 42px;
   }
   .hero-container {
-    height: min(687px, 45vw);
+    height: 30vw;
     min-width: 30vw;
     padding: 48px;
   }
