@@ -43,6 +43,14 @@
       {% endif %}
     </div>
   </div>
-  <div class="apps" id="main">{% area data.page, 'main' %}</div>
+  <div class="apps">{% area data.page, 'main' %}</div>
 </div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const area = document.querySelector(".apps .apos-area");
+    if (area) {
+      area.id = "main";
+    }
+  });
+</script>
 {% endblock %}
