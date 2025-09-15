@@ -1,8 +1,20 @@
-{% extends data.outerLayout %} {% set title = data.piece.title or
-data.page.title %} {% block title %} {{ title }} {% if not title %} {{
-apos.log('Looks like you forgot to override the title block in a template that
-does not have access to an Apostrophe page or piece.') }} {% endif %} {%
-endblock %} {% block beforeMain %}
+{% extends data.outerLayout %} {% block extraHead %} {{ super() }}
+<script
+  async
+  src="https://www.googletagmanager.com/gtag/js?id=G-WSWKXH221J"
+></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-WSWKXH221J");
+</script>
+{% endblock %} {% set title = data.piece.title or data.page.title %} {% block
+title %} {{ title }} {% if not title %} {{ apos.log('Looks like you forgot to
+override the title block in a template that does not have access to an
+Apostrophe page or piece.') }} {% endif %} {% endblock %} {% block beforeMain %}
 <div class="bp-wrapper">
   <header class="bp-header">
     <a href="/{{data.locale}}/">
