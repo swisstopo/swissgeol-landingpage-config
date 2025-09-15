@@ -112,7 +112,7 @@
 
   .layer-base {
     left: 0;
-    top: 250px;
+    top: 350px;
     width: 75%;
     height: 80%;
   }
@@ -147,7 +147,7 @@
 
   .layer-base {
     left: -150px;
-    top: 550px;
+    top: 600px;
     width: 70%;
     height: 60%;
   }
@@ -156,10 +156,12 @@
     left: 0;
     z-index: 3;
     top: 0;
+    display: flex;
+    justify-content: center;
   }
 
   .layer-top {
-    right: 0;
+    right: -40px;
     top: -350px;
     width: 38%;
     height: 100%;
