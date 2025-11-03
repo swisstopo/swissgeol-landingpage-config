@@ -33,8 +33,12 @@ export default {
             value: "red",
           },
           {
-            label: "Orange (Raw MAterials",
+            label: "Orange (Raw Materials)",
             value: "orange",
+          },
+          {
+            label: "Violet (Lexic)",
+            value: "violet",
           },
         ],
       },
