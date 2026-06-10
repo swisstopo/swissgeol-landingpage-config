@@ -42,6 +42,7 @@
   "license": "MIT",
   "dependencies": {
     "@apostrophecms/favicon": "^1.1.3",
+    "@apostrophecms/security-headers": "^1.0.2",
     "@apostrophecms/vite": "^1.0.0",
     "apostrophe": "^4.20.0",
     "normalize.css": "^8.0.1"
