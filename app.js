@@ -80,6 +80,6 @@ apostrophe({
     "@apostrophecms/vite": {},
     // The project's first custom page type.
     "default-page": {},
-    '@apostrophecms/security-headers': {}
+    "@apostrophecms/security-headers": {},
   },
 });
