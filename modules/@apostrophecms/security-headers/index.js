@@ -1,4 +1,4 @@
-module.exports = {
+export default {
     // the default headers of the package. change at will.
     options: {
         // 1 year. Do not include subdomains as they could be unrelated sites
