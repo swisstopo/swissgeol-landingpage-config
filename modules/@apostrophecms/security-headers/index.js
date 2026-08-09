@@ -21,6 +21,6 @@ export default {
     // You may also pass your own string, or `false` to not send this header.
     // The `policies` option and all of its sub-options are ignored unless
     // `Content-Security-Policy` is `true`.
-    "Content-Security-Policy": true,
+    "Content-Security-Policy": false,
   },
 };
