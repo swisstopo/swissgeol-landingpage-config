@@ -3,7 +3,7 @@
   async
   src="https://www.googletagmanager.com/gtag/js?id=G-WSWKXH221J"
 ></script>
-<script>
+<script nonce="{{ nonce }}">
   window.dataLayer = window.dataLayer || [];
   function gtag() {
     dataLayer.push(arguments);
@@ -82,15 +82,13 @@ Apostrophe page or piece.') }} {% endif %} {% endblock %} {% block beforeMain %}
     />
   </footer>
 </div>
-<script>
+<script nonce="{{ nonce }}">
   document.addEventListener("DOMContentLoaded", () => {
     const toggler = document.querySelector("[data-locales-toggle]");
     const list = document.querySelector("[data-locales]");
 
     if (toggler && list) {
       toggler.addEventListener("click", () => {
-        console.log("yoyooy");
-
         const isExpanded = toggler.getAttribute("aria-expanded") === "true";
         toggler.setAttribute("aria-expanded", String(!isExpanded));
         list.hidden = isExpanded;
