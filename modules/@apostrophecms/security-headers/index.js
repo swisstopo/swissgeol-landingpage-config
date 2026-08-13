@@ -17,10 +17,14 @@ export default {
     // origin. You can set this to `false` if you prefer cross-origin "Referer"
     // headers be sent. Apostrophe does not rely on them
     "Referrer-Policy": "same-origin",
-    // `true` means it should be computed according to the rules below.
-    // You may also pass your own string, or `false` to not send this header.
-    // The `policies` option and all of its sub-options are ignored unless
-    // `Content-Security-Policy` is `true`.
-    "Content-Security-Policy": false,
+    // CSP is disabled in dev to avoid conflicts with Vite's HMR inline scripts.
+    // In production, `true` enables nonce-based CSP computed from the policies below.
+    "Content-Security-Policy": process.env.NODE_ENV === "production",
+    policies: {
+      // Vite inlines small SVGs as data: URIs in production builds.
+      dataImages: {
+        "img-src": "data:",
+      },
+    },
   },
 };
