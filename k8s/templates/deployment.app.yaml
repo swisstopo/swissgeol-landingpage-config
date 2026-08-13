@@ -51,7 +51,11 @@ spec:
                 secretKeyRef:
                   name: {{ .Release.Name }}-secrets
                   key: mongodb_uri
-
+          
+        resources:
+          requests:
+            cpu: 10m
+            memory: 200Mi 
 
 
 

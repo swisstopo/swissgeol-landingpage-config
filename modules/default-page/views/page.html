@@ -27,7 +27,7 @@ template that lives in the top-level views/ folder for convenience #} {% extends
     </ul>
   </nav>
 </div>
-<script>
+<script nonce="{{ nonce }}">
   function onScroll() {
     const sections = document.querySelectorAll("section h2[id]");
     const navLinksDesktop = document.querySelectorAll(".section-nav a");

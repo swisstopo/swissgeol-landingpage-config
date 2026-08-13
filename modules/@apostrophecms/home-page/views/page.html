@@ -45,7 +45,7 @@
   </div>
   <div class="apps">{% area data.page, 'main' %}</div>
 </div>
-<script>
+<script nonce="{{ nonce }}">
   document.addEventListener("DOMContentLoaded", () => {
     const area = document.querySelector(".apps .apos-area");
     if (area) {
